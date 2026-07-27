@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portal de Kael</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <img class="galaxy-sparkles" src="assets/img/Fondos/main-bg.svg" alt="" aria-hidden="true" />
+  <div id="app">
+
+    <!-- =========================
+         ENCABEZADO SUPERIOR
+         Cambia dinámicamente al pasar por cada nodo
+         ========================= -->
+    <header class="site-header">
+      <h1>Portal de Kael</h1>
+      <p class="site-subtitle">Artes, oficios y mundos de un caballero moderno</p>
+    </header>
+
+    <main class="site-main">
+
+      <!-- =========================
+           FONDO DINÁMICO
+           Cambia según el nodo en hover
+           ========================= -->
+      <div class="portal-bg"></div>
+
+      <!-- =========================
+           MENÚ RADIAL
+           Conserva el círculo, líneas, posiciones y efectos
+           ========================= -->
+      <section class="radial-menu" aria-label="Portal radial de proyectos">
+
+        <!-- SVG de órbita y conexiones -->
+        <svg class="radial-orbit" viewBox="0 0 100 100" aria-hidden="true"></svg>
+
+        <!-- =========================
+             NÚCLEO CENTRAL
+             Muestra imagen contextual al pasar por cada nodo
+             ========================= -->
+        <a href="sobre-mi.html" class="radial-core" aria-label="Ir a Sobre mí">
+          <img class="core-default" src="assets/img/Core/core-nativo.png" alt="Kael" />
+          <img class="core-logo" src="" alt="" />
+        </a>
+
+        <!-- =========================
+             NODOS RADIALES
+             Cada nodo usa su identidad o un nombre tipográfico.
+             ========================= -->
+
+        <!-- BATTLECHAMP ARENA -->
+        <a
+          class="radial-item radial-item--logo"
+          href="bca.html"
+          data-section="bca"
+          data-title="Battlechamp Arena"
+          data-subtitle="Juego de mesa RPG medieval"
+          data-bg="assets/img/Fondos/fondo-bca.png"
+          data-core-logo="assets/img/Core/core-bca.png"
+          aria-label="Ir a Battlechamp Arena"
+        >
+          <img src="assets/icon/bca-logo.svg" class="icon" alt="Battlechamp Arena" />
+          <span class="radial-label">Battlechamp Arena</span>
+        </a>
+
+        <!-- PERDIDOS EN MARTE -->
+        <a
+          class="radial-item radial-item--logo"
+          href="pem.html"
+          data-section="pem"
+          data-title="Perdidos en Marte"
+          data-subtitle="Juego cooperativo de supervivencia espacial"
+          data-bg="assets/img/Fondos/fondo-pem.png"
+          data-core-logo="assets/img/Core/core-pem.png"
+          aria-label="Ir a Perdidos en Marte"
+        >
+          <img src="assets/icon/pem-logo-b.svg" class="icon" alt="Perdidos en Marte" />
+          <span class="radial-label">Perdidos en Marte</span>
+        </a>
+
+        <!-- VIDEOJUEGOS / PROTOTIPOS -->
+        <a
+          class="radial-item radial-item--logo"
+          href="videojuegos.html"
+          data-section="videojuegos"
+          data-title="Videojuegos"
+          data-subtitle="Prototipos jugables y mundos interactivos"
+          data-bg="assets/img/Fondos/FONDO-FINAL.png"
+          data-core-logo="assets/img/Core/core-videojuegos.png"
+          aria-label="Ir a Videojuegos y prototipos"
+        >
+          <img src="assets/icon/icon-videojuegos.png" class="icon" alt="Videojuegos" />
+          <span class="radial-label">Videojuegos</span>
+        </a>
+
+        <!-- LABORATORIO -->
+        <a
+          class="radial-item radial-item--logo"
+          href="laboratorio.html"
+          data-section="laboratorio"
+          data-title="Laboratorio"
+          data-subtitle="Ideas, prototipos, IA y registros de exploración"
+          data-bg="assets/img/Fondos/fondo-lab.png"
+                    data-core-logo="assets/img/Core/core-lab.png"
+          aria-label="Ver Laboratorio"
+        >
+          <img src="assets/icon/icon-laboratorio.png" class="icon" alt="Laboratorio" />
+          <span class="radial-label">Laboratorio</span>
+        </a>
+
+        <!-- ESTUDIO -->
+                <a
+                  class="radial-item radial-item--logo"
+                  href="multimedia.html"
+                  data-section="estudio"
+                  data-title="Estudio"
+                  data-subtitle="YouTube, música, canto, piano, edición y streams"
+                  data-bg="assets/img/Fondos/fondo-multimedia.PNG"
+                            data-core-logo="assets/img/Core/core-multi.png"
+                  aria-label="Ver Estudio"
+                >
+                  <img src="assets/icon/icon-multimedia.png" class="icon" alt="Estudio" />
+                  <span class="radial-label">Estudio</span>
+                </a>
+
+        <!-- ARTE / DISEÑO VISUAL -->
+        <a
+          class="radial-item radial-item--logo"
+          href="arte.html"
+          data-section="arte-diseno"
+          data-title="Arte / Diseño visual"
+          data-subtitle="Ilustración, UI, logos, concept art y piezas seleccionadas"
+          data-bg="assets/img/Fondos/fondo-arte.jpg"
+          data-core-logo="assets/img/Core/core-arte.jpeg"
+          aria-label="Ver Arte y Diseño visual"
+        >
+          <img src="assets/icon/icon-arte.png" class="icon" alt="Arte / Diseño visual" />
+          <span class="radial-label">Arte / Diseño visual</span>
+        </a>
+      </section>
+    </main>
+
+        <!-- =========================
+         PIE DE PÁGINA
+         ========================= -->
+    
+  </div>
+
+  <script src="js/main.js"></script>
+  <footer class="site-footer">
+  <div>IV Studios - Ignacio Vergara Moraga</div>
+  <div>1.0/Julio/2026</div>
+  <div>Todos los derechos reservados</div>
+</footer>
+</body>
+  </html>

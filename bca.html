@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BattleChamp Arena</title>
+  <link rel="stylesheet" href="css/bca.css">
+</head>
+<body>
+
+  <div class="bca-video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="assets/video/back-bca.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div> </div>
+
+  <a class="portal-return" href="index.html" aria-label="Volver al portal principal">
+    <span aria-hidden="true">←</span> Volver al portal
+  </a>
+
+  <section id="hero" class="bca-hero">
+    <div class="hero-logo">
+        <img src="assets/img/BCA/bca-logo.png" alt="BattleChamp Arena">
+    </div>
+
+    <div class="hero-box">
+        <h2>El mejor de 3 rondas de combate<br>se alzará con la victoria</h2>
+        <a href="#review" class="hero-btn btn-entrar">Entrar a la Arena</a>
+    </div>
+  </section>
+
+  <section class="bca-review" id="review">
+    <h2 class="section-title">¿Qué es BattleChamp Arena?</h2>
+    <p class="review-text">
+      BCA es un juego de batalla táctica por rondas, donde <strong>campeones</strong>,
+      <strong>armas</strong> y <strong>armaduras</strong> chocan en un duelo estratégico.
+    </p>
+
+    <div class="review-cards">
+      <div class="review-card" data-full-img="assets/img/BCA/bca-p1.png">
+        <div class="card-img-wrapper">
+            <img src="assets/img/BCA/bca-p1.png" alt="Combate Rápido">
+        </div>
+        <h3>Combate Rápido</h3>
+        <p>Rondas intensas, decisiones significativas y gloria inmediata.</p>
+      </div>
+
+      <div class="review-card" data-full-img="assets/img/BCA/bca-p2.png">
+        <div class="card-img-wrapper">
+            <img src="assets/img/BCA/bca-p2.png" alt="Clases Únicas">
+        </div>
+        <h3>Clases Únicas</h3>
+        <p>Cada campeón trae habilidades, estilos y equipamiento especial.</p>
+      </div>
+
+      <div class="review-card" data-full-img="assets/img/BCA/bca-p3.png">
+        <div class="card-img-wrapper">
+            <img src="assets/img/BCA/bca-p3.png" alt="Print & Play">
+        </div>
+        <h3>100% Print & Play</h3>
+        <p>Imprime, arma y juega: la arena está siempre lista.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bca-select" id="select">
+    <h2 class="section-title">Escoge tu Campeón</h2>
+    <p class="select-sub">
+      Haz click en un hexágono para ver su historia, habilidades y equipo.
+    </p>
+
+<div class="hex-grid">
+  <!-- Fila superior -->
+  <div class="hex-row">
+    <div class="hex-item"
+         data-name="Guerrero"
+         data-rol="Furia de la Arena"
+         data-img-full="assets/img/BCA/g-m.png" 
+         data-lore="El rugido del público apenas logra acallar el estruendo de su coraje. El Guerrero no lucha por gloria ni por fe, sino por instinto, orgullo y legado. Cada cicatriz en su cuerpo es un mapa de victorias y derrotas, y en su mirada arde la promesa de jamás rendirse. Cuando pisa la arena, la batalla se convierte en un arte... brutal, directo y eterno."
+         data-armor-icon="assets/icon/i-pesado.png"
+         data-armor-text="Pesada"
+         data-w-common="assets/icon/i-espada.png"
+         data-w-common-name="Espada"
+         data-w-special="assets/icon/i-rodela.png"
+         data-w-special-name="Rodela"
+         data-skill1="Cargar: Rompe 1 Armadura"
+         data-skill2="Bloqueo Férreo: Autoinmunidad"
+         data-emblem="assets/img/BCA/s-guerrero.png">
+      <div class="hex-inner">
+        <img src="assets/img/BCA/g4.png" class="champ-icon" alt="Guerrero">
+        <span class="champ-name">Guerrero</span>
+      </div>
+      <div class="hex-particles"></div>
+    </div>
+
+    <div class="hex-item"
+         data-name="Druida"
+         data-rol="Voz del Bosque Eterno"
+         data-img-full="assets/img/BCA/d-m.png"
+         data-lore="No vino a luchar, sino a proteger. El druida es la raíz de un antiguo pacto con la naturaleza, su cuerpo cubierto de plumajes y su alma guiada por las estrellas lo guió a la Arena no por gloria, sino por equilibrio. Donde otros ven batalla, él ve profanación… y donde hay destrucción, él siembra renacimiento."
+         data-armor-icon="assets/icon/i-ligero.png"
+         data-armor-text="Ligera"
+         data-w-common="assets/icon/i-baston.png"
+         data-w-common-name="Bastón"
+         data-w-special="assets/icon/i-baculo.png"
+         data-w-special-name="Báculo"
+         data-skill1="Zas!: Destruye una Armadura"
+         data-skill2="Sanación: Restaura 1 de Vida"
+         data-emblem="assets/img/BCA/s-druida.png">
+      <div class="hex-inner">
+        <img src="assets/img/BCA/dm.png" class="champ-icon" alt="Druida">
+        <span class="champ-name">Druida</span>
+      </div>
+      <div class="hex-particles"></div>
+    </div>
+
+    <div class="hex-item"
+         data-name="Paladín"
+         data-rol="Guardián del Alba"
+         data-img-full="assets/img/BCA/p-m.png"
+         data-lore="Bajo la mirada de los cielos, un caballero sagrado irrumpe en la Arena como un faro de justicia.La llama sagrada de su fe, lucha por los inocentes, por los caídos, por los que aún creen.Su armadura no sólo lo protege: lo encadena a un voto eterno.Traer la luz allí donde la oscuridad ha reinado por demasiado tiempo."
+         data-armor-icon="assets/icon/i-pesado.png"
+         data-armor-text="Pesado"
+         data-w-common="assets/icon/i-espada.png"
+         data-w-common-name="Espada"
+         data-w-special="assets/icon/i-reliquia.png"
+         data-w-special-name="Reliquia"
+         data-skill1="Redirección: Inmuniza a un Aliado"
+         data-skill2="Curación Sagrada: Sana 1 de Vida"
+         data-emblem="assets/img/BCA/s-paladin.png">
+      <div class="hex-inner">
+        <img src="assets/img/BCA/pm.png" class="champ-icon" alt="Paladín">
+        <span class="champ-name">Paladín</span>
+      </div>
+      <div class="hex-particles"></div>
+    </div>
+
+    <div class="hex-item"
+         data-name="Asesina"
+         data-rol="Susurro de Sangre"
+         data-img-full="assets/img/BCA/as-f.png"
+         data-lore="Nacida en el anonimato de los callejones más oscuros, la Asesina aprendió desde temprano que en el juego de la vida, la confianza era una sentencia de muerte. Privada de nombre, familia y hogar, moldeó su identidad como un arma: invisible, precisa, mortal. Ella sólo buscaba sobrevivir. Pero en su andar silencioso, descubrió que incluso un alma rota puede elegir sus presas.Mata por placer, y por el oro que sus servicios despiertan en los poderosos. Cada muerte es una danza y cada corte una obra carmesí. Sin culpa ni remordimiento, ella eligió ser el depredador, no presa."
+         data-armor-icon="assets/icon/i-ligero.png"
+         data-armor-text="Ligero"
+         data-w-common="assets/icon/i-espada.png"
+         data-w-common-name="Espada"
+         data-w-special="assets/icon/i-daga.png"
+         data-w-special-name="Daga"
+         data-skill1="Esquiva: Anula el próximo daño"
+         data-skill2="Puñalada: Haz el doble de daño"
+         data-emblem="assets/img/BCA/s-asesino.png">
+         <div class="hex-inner">
+        <img src="assets/img/BCA/asf.png" class="champ-icon" alt="Asesina">
+        <span class="champ-name">Asesina</span>
+      </div>
+      <div class="hex-particles"></div>
+    </div>
+
+    <div class="hex-item"
+    data-name="Ballestera"
+         data-rol="Rompecorazones silenciosa"
+         data-img-full="assets/img/BCA/ba-f.png"
+         data-lore="Nacida en el ceno de una familia adinerada, pudo aprender múltiples oficios. Pero al recibir su ballesta, su habilidad dejó de tener parangón."
+         data-armor-icon="assets/icon/i-ligero.png"
+         data-armor-text="Ligero"
+         data-w-common="assets/icon/i-baston.png"
+         data-w-common-name="Bastón"
+         data-w-special="assets/icon/i-ballesta.png"
+         data-w-special-name="Ballesta"
+         data-skill1="Tiro incapacitante: Destruye un arma "
+         data-skill2="Tiro certero: 1 de Daño Directo"
+         data-emblem="assets/img/BCA/s-ballestero.png">
+      <div class="hex-inner">
+        <img src="assets/img/BCA/baf.png" class="champ-icon" alt="Ballestera">
+        <span class="champ-name">Ballestera</span>
+      </div>
+      <div class="hex-particles"></div>
+    </div>
+
+    <div class="hex-item"
+    data-name="Blindada"
+    data-rol="El escudo de los débiles"
+         data-img-full="assets/img/BCA/bl-f.png"
+         data-lore="Nacida en heladas tierras, desde pequeña fue curtida en una vida difícil. Con el tiempo, se dió cuenta de que podía ayudar a otros a sufrir menos e hizo de eso, una razón de vivir."
+         data-armor-icon="assets/icon/i-pesado.png"
+         data-armor-text="Pesado"
+         data-w-common="assets/icon/i-escudo.png"
+         data-w-common-name="Escudo"
+         data-w-special="assets/icon/i-mazo.png"
+         data-w-special-name="Martillo"
+         data-skill1="Escudo!: Autoinmunidad"
+         data-skill2="Quieto!: Anula una habilidad Rival."
+         data-emblem="assets/img/BCA/s-blindado.png">
+      <div class="hex-inner">
+        <img src="assets/img/BCA/bf.png" class="champ-icon" alt="Blindada">
+        <span class="champ-name">Blindada</span>
+      </div>
+      <div class="hex-particles"></div>
+    </div>
+  </div>
+
+  <!-- Fila inferior (DESFASADA) -->
+  <div class="hex-row">
+    <div class="hex-item"
+         data-name="Guerrera"
+         data-rol="La predestinada a luchar"
+         data-img-full="assets/img/BCA/g-f.png" 
+         data-lore="Una vida tranquila y simple, hasta que la guerra azotó su pueblo. Su ancia de venganza la llevó hasta la arena, en donde porfín, podría saldar la deuda que tanto persiguió."
+         data-armor-icon="assets/icon/i-pesado.png"
+         data-armor-text="Pesada"
+         data-w-common="assets/icon/i-espada.png"
+         data-w-common-name="Espada"
+         data-w-special="assets/icon/i-rodela.png"
+         data-w-special-name="Rodela"
+         data-skill1="Cargar: Rompe 1 Armadura"
+         data-skill2="Bloqueo Férreo: Autoinmunidad"
+         data-emblem="assets/img/BCA/s-guerrero.png">
+      <div class="hex-inner">
+        <img src="assets/img/BCA/gf.png" class="champ-icon" alt="Guerrera">
+        <span class="champ-name">Guerrera</span>
+      </div>
+      <div class="hex-particles"></div>
+    </div>
+
+    <div class="hex-item"
+         data-name="Druida"
+         data-rol="Voz del Bosque Eterno"
+         data-img-full="assets/img/BCA/d-f.png"
+         data-lore="No vino a luchar, sino a proteger. La druida da vida donde antes, sólo había caos."
+         data-armor-icon="assets/icon/i-ligero.png"
+         data-armor-text="Ligera"
+         data-w-common="assets/icon/i-baston.png"
+         data-w-common-name="Bastón"
+         data-w-special="assets/icon/i-baculo.png"
+         data-w-special-name="Báculo"
+         data-skill1="Zas!: Destruye una Armadura"
+         data-skill2="Sanación: Restaura 1 de Vida"
+         data-emblem="assets/img/BCA/s-druida.png">
+      <div class="hex-inner">
+        <img src="assets/img/BCA/df.png" class="champ-icon" alt="Druida">
+        <span class="champ-name">Druida</span>
+      </div>
+      <div class="hex-particles"></div>
+    </div>
+
+    <div class="hex-item"
+         data-name="Paladina"
+         data-rol="Luz de verdad"
+         data-img-full="assets/img/BCA/p-f.png"
+         data-lore="Criada cómo huérfana, desde pequeña aprendió a reconocer los males del mundo, y juró erradicarlos."
+         data-armor-icon="assets/icon/i-pesado.png"
+         data-armor-text="Pesado"
+         data-w-common="assets/icon/i-espada.png"
+         data-w-common-name="Espada"
+         data-w-special="assets/icon/i-reliquia.png"
+         data-w-special-name="Reliquia"
+         data-skill1="Redirección: Inmuniza a un Aliado"
+         data-skill2="Curación Sagrada: Sana 1 de Vida"
+         data-emblem="assets/img/BCA/s-paladin.png">
+      <div class="hex-inner">
+        <img src="assets/img/BCA/pf.png" class="champ-icon" alt="Paladina">
+        <span class="champ-name">Paladina</span>
+      </div>
+      <div class="hex-particles"></div>
+    </div>
+
+    <div class="hex-item"
+         data-name="Asesino"
+         data-rol="Nada es verdad, todo está permitido"
+         data-img-full="assets/img/BCA/as-m.png"
+         data-lore="Nacido y críado para matar, es eficaz y certero en su ejecución. El mejor en su trabajo."
+         data-armor-icon="assets/icon/i-ligero.png"
+         data-armor-text="Ligero"
+         data-w-common="assets/icon/i-espada.png"
+         data-w-common-name="Espada"
+         data-w-special="assets/icon/i-daga.png"
+         data-w-special-name="Daga"
+         data-skill1="Esquiva: Anula el próximo daño"
+         data-skill2="Puñalada: Haz el doble de daño"
+         data-emblem="assets/img/BCA/s-asesino.png">
+         <div class="hex-inner">
+        <img src="assets/img/BCA/asm.png" class="champ-icon" alt="Asesino">
+        <span class="champ-name">Asesino</span>
+      </div>
+      <div class="hex-particles"></div>
+    </div>
+
+    <div class="hex-item"
+    data-name="Ballestero"
+         data-rol="El Certero"
+         data-img-full="assets/img/BCA/ba-m.png"
+         data-lore="Donde pone el ojo, pone la saeta."
+         data-armor-icon="assets/icon/i-ligero.png"
+         data-armor-text="Ligero"
+         data-w-common="assets/icon/i-baston.png"
+         data-w-common-name="Bastón"
+         data-w-special="assets/icon/i-ballesta.png"
+         data-w-special-name="Ballesta"
+         data-skill1="Tiro incapacitante: Destruye un arma "
+         data-skill2="Tiro certero: 1 de Daño Directo"
+         data-emblem="assets/img/BCA/s-ballestero.png">
+      <div class="hex-inner">
+        <img src="assets/img/BCA/bam.png" class="champ-icon" alt="Ballestero">
+        <span class="champ-name">Ballestero</span>
+      </div>
+      <div class="hex-particles"></div>
+    </div>
+
+    <div class="hex-item"
+    data-name="Blindado"
+    data-rol="Guardián caído"
+         data-img-full="assets/img/BCA/bl-m.png"
+         data-lore="Soy el dios de la Guerra."
+         data-armor-icon="assets/icon/i-pesado.png"
+         data-armor-text="Pesado"
+         data-w-common="assets/icon/i-escudo.png"
+         data-w-common-name="Escudo"
+         data-w-special="assets/icon/i-mazo.png"
+         data-w-special-name="Martillo"
+         data-skill1="Escudo!: Autoinmunidad"
+         data-skill2="Quieto!: Anula una habilidad Rival."
+         data-emblem="assets/img/BCA/s-blindado.png">
+      <div class="hex-inner">
+        <img src="assets/img/BCA/bm.png" class="champ-icon" alt="Blindado">
+        <span class="champ-name">Blindado</span>
+      </div>
+      <div class="hex-particles"></div>
+    </div>
+  </div>
+
+<div id="champion-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="card-name">
+  <div class="card-container">
+    <button class="close-modal" type="button" aria-label="Cerrar ficha de campeón">&times;</button>
+    
+    <div class="flag-emblem left">
+      <img src="assets/img/BCA/s-guerrero.png" alt="Emblema">
+    </div>
+    <div class="flag-emblem right">
+      <img src="assets/img/BCA/s-guerrero.png" alt="Emblema">
+    </div>
+
+    <div class="card-header">
+      <h2 id="card-name">NOMBRE</h2>
+      <p id="card-rol">Rol del personaje</p>
+    </div>
+
+    <div class="card-body">
+      <!-- COLUMNA IZQUIERDA -->
+      <div class="col-left">
+        <div class="lore-box">
+          <h3>Historia</h3>
+          <p id="card-lore">...</p>
+        </div>
+      </div>
+
+      <!-- COLUMNA CENTRAL (HÉROE) -->
+      <div class="col-center">
+        <img id="card-hero-img" src="" alt="Hero">
+      </div>
+
+      <!-- COLUMNA DERECHA -->
+      <div class="col-right">
+        <!-- Armamento -->
+        <div class="weapons-box">
+          <h3>Armamento</h3>
+          <div class="weapon-grid">
+            <div class="w-item">
+              <span class="label">Común</span>
+              <img id="card-w-common" src="" alt="">
+              <span id="card-w-common-name" class="mini-text"></span>
+            </div>
+            <div class="w-item">
+              <span class="label">Especial</span>
+              <img id="card-w-special" src="" alt="">
+              <span id="card-w-special-name" class="mini-text"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Armadura (BAJO el armamento) -->
+        <div class="armor-box">
+          <h3>Armadura</h3>
+          <div class="armor-display">
+            <img id="card-armor-icon" src="" alt="Armadura">
+            <span id="card-armor-text">Tipo</span>
+          </div>
+        </div>
+
+        <!-- Habilidades -->
+        <div class="skills-box">
+          <h3>Habilidades</h3>
+          <ul class="skill-list">
+            <li id="card-skill1">Habilidad 1</li>
+            <li id="card-skill2">Habilidad 2</li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- .card-body -->
+  </div><!-- .card-container -->
+</div><!-- #champion-modal -->
+
+
+  <div id="img-modal" class="modal-overlay img-modal" role="dialog" aria-modal="true" aria-label="Vista ampliada">
+      <div class="img-modal-content">
+          <button class="close-img-modal" type="button" aria-label="Cerrar vista ampliada">&times;</button>
+          <img id="img-modal-target" src="" alt="Vista Previa">
+      </div>
+  </div>
+
+  <section class="bca-campaign-teaser" id="campaign" aria-labelledby="campaign-title">
+    <div class="campaign-teaser__frame">
+      <div class="campaign-teaser__copy">
+        <p class="campaign-teaser__eyebrow">BCA Campaign</p>
+        <h2 id="campaign-title">La Arena es sólo el comienzo</h2>
+        <p>Más allá del combate ritualizado, los campeones entran a un mundo de bosques traidores, ruinas y caminos que no perdonan.</p>
+      </div>
+      <div class="campaign-teaser__scenes" aria-label="Locaciones de BCA Campaña">
+        <img src="assets/img/BCA/campaña/Bosque traidor.png" alt="Bosque Traidor">
+        <img src="assets/img/BCA/campaña/castillo ruinoso.png" alt="Castillo Ruinoso">
+        <img src="assets/img/BCA/campaña/Molino.png" alt="Molino">
+      </div>
+    </div>
+  </section>
+
+  
+
+  <script src="js/bca.js"></script>     
+    <!-- =========================
+         PIE DE PÁGINA
+         ========================= -->
+    
+<footer class="site-footer">
+  <div>IV Studios - Ignacio Vergara Moraga</div>
+  <div>1.0/Julio/2026</div>
+</footer>
+</body>
+</html>

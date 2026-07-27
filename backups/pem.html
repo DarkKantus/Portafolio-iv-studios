@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perdidos en Marte (PeM)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/pem.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+  <section class="pem-command">
+    <div class="pem-command__shell">
+
+      <!-- COLUMNA IZQUIERDA -->
+      <aside class="pem-command__sidebar">
+        <div class="pem-brand">
+          <div id="mars-globe"></div>
+
+          <div class="pem-brand__copy">
+            <p class="pem-brand__eyebrow">Proyecto narrativo / videojuego</p>
+            <h1>Perdidos en Marte</h1>
+            <p class="pem-brand__text">
+              Una expedición viaja al planeta rojo para descubrir qué ocurrió con las
+              colonias incomunicadas, sobrevivir al Marcurenio y regresar a la Tierra
+              con la cura.
+            </p>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ZONA DERECHA -->
+      <div class="pem-command__main">
+
+        <!-- BARRA SUPERIOR -->
+        <header class="pem-topbar">
+          <div class="pem-topbar__actions">
+            <a class="pem-topbar__button" href="index.html" aria-label="Volver al index">↩</a>
+            <button class="pem-topbar__button" id="pemThemeToggle" type="button" aria-label="Cambiar modo oscuro">☾</button>
+          </div>
+          <nav class="pem-nav" aria-label="Navegación principal">
+
+            <div class="pem-nav__group" data-menu="mundo">
+              <button class="pem-nav__trigger is-active" type="button">
+                Mundo
+              </button>
+
+              <div class="pem-submenu">
+                <button class="pem-submenu__item is-active"
+                  type="button"
+                  data-panel-title="Contexto"
+                  data-panel-kicker="Mundo"
+                  data-panel-text="La humanidad llegó a un Marte terraformado a medias. Algo ocurrió en las colonias, se perdió el contacto y una nueva misión fue enviada para averiguar la verdad."
+                  data-panel-visual="contexto">
+                  Contexto
+                </button>
+
+                <button class="pem-submenu__item"
+                  type="button"
+                  data-panel-title="Historia"
+                  data-panel-kicker="Mundo"
+                  data-panel-text="La crisis del Marcurenio convirtió una promesa científica en una pesadilla biológica. Las colonias quedaron aisladas y el tiempo juega en contra."
+                  data-panel-visual="historia">
+                  Historia
+                </button>
+
+                <button class="pem-submenu__item"
+                  type="button"
+                  data-panel-title="Juego"
+                  data-panel-kicker="Mundo"
+                  data-panel-text="PeM mezcla exploración, tensión, gestión de riesgo y progresión narrativa en un entorno marciano hostil."
+                  data-panel-visual="juego">
+                  Juego
+                </button>
+              </div>
+            </div>
+
+            <div class="pem-nav__group" data-menu="mecanicas">
+              <button class="pem-nav__trigger" type="button">
+                Mecánicas
+              </button>
+
+              <div class="pem-submenu">
+                <button class="pem-submenu__item"
+                  type="button"
+                  data-panel-title="Mapa"
+                  data-panel-kicker="Mecánicas"
+                  data-panel-text="El mapa se construye mediante losetas y zonas conectadas. Cada sector de Marte define rutas, amenazas, recursos y decisiones tácticas."
+                  data-panel-visual="mapa">
+                  Mapa
+                </button>
+
+                <button class="pem-submenu__item"
+                  type="button"
+                  data-panel-title="Combate"
+                  data-panel-kicker="Mecánicas"
+                  data-panel-text="El combate enfrenta al equipo con criaturas mutadas, entornos contaminados y recursos limitados. Cada decisión pesa."
+                  data-panel-visual="combate">
+                  Combate
+                </button>
+
+                <button class="pem-submenu__item"
+                  type="button"
+                  data-panel-title="Eventos"
+                  data-panel-kicker="Mecánicas"
+                  data-panel-text="Tormentas, fallas técnicas, encuentros y accidentes alteran la partida y vuelven cada expedición distinta."
+                  data-panel-visual="evento">
+                  Eventos
+                </button>
+              </div>
+            </div>
+
+            <div class="pem-nav__group" data-menu="arte">
+              <button class="pem-nav__trigger" type="button">
+                Arte
+              </button>
+
+              <div class="pem-submenu">
+                <button class="pem-submenu__item"
+                  type="button"
+                  data-panel-title="Conceptual"
+                  data-panel-kicker="Arte"
+                  data-panel-text="El arte conceptual define colonias, superficies marcianas, tecnología, criaturas y atmósferas de una ciencia ficción limpia y luminosa."
+                  data-panel-visual="conceptual">
+                  Conceptual
+                </button>
+
+                <button class="pem-submenu__item"
+                  type="button"
+                  data-panel-title="Interfaces"
+                  data-panel-kicker="Arte"
+                  data-panel-text="Las interfaces buscan transmitir una nave avanzada: superficies blancas, brillo frío, líneas finas, información flotante y profundidad visual."
+                  data-panel-visual="interfaces">
+                  Interfaces
+                </button>
+
+                <button class="pem-submenu__item"
+                  type="button"
+                  data-panel-title="Identidad"
+                  data-panel-kicker="Arte"
+                  data-panel-text="La identidad visual de PeM equilibra vacío espacial, tecnología quirúrgica y la amenaza orgánica del planeta."
+                  data-panel-visual="identidad">
+                  Identidad
+                </button>
+              </div>
+            </div>
+
+          </nav>
+        </header>
+
+        <!-- MÓDULO PLANETARIO -->
+        <section class="pem-planet-module" id="pemPlanetModule" aria-hidden="true">
+          <div class="pem-planet-stage">
+            <div id="mars-globe-large"></div>
+            <button class="pem-planet-node" type="button" data-lat="24" data-lon="-35"
+              data-node-kicker="Zona recuperada"
+              data-node-title="Centro científico Keops"
+              data-node-image="./assets/img/pem/Centro científico Keops.png"
+              data-node-text="Complejo científico parcialmente activo. Las últimas señales indican actividad de respaldo, cámaras corruptas y movimiento irregular bajo la superficie.">
+              <span></span>
+            </button>
+            <button class="pem-planet-node" type="button" data-lat="-4" data-lon="32"
+              data-node-kicker="Alerta biológica"
+              data-node-title="Sector Marcurenio"
+              data-node-image="./assets/img/pem/contexto-1.png"
+              data-node-text="Región contaminada por alta concentración de Marcurenio. La lectura atmosférica fluctúa y los mapas antiguos ya no coinciden con el terreno visible.">
+              <span></span>
+            </button>
+            <button class="pem-planet-node" type="button" data-lat="-32" data-lon="-62"
+              data-node-kicker="Señal débil"
+              data-node-title="Bastión Sur"
+              data-node-image="./assets/img/pem/contexto-2.png"
+              data-node-text="Último punto de transmisión humana estable. El canal llega fragmentado, pero repite una coordenada y una advertencia: no abrir las esclusas.">
+              <span></span>
+            </button>
+          </div>
+
+          <div class="pem-planet-brief" aria-hidden="true">
+            <p class="pem-planet-hint">mensajes de ayuda</p>
+            <p class="pem-planet-brief__kicker" id="pemPlanetKicker"></p>
+            <h2 class="pem-planet-brief__title" id="pemPlanetTitle"></h2>
+            <p class="pem-planet-brief__text" id="pemPlanetText"></p>
+          </div>
+        </section>
+
+        <!-- PANEL CAMBIANTE -->
+        <section class="pem-display" aria-live="polite">
+          <div class="pem-display__visual" id="pemVisual"></div>
+
+          <div class="pem-display__content">
+            <p class="pem-display__kicker" id="pemPanelKicker">Mundo</p>
+            <h2 class="pem-display__title" id="pemPanelTitle">Contexto</h2>
+            <p class="pem-display__text" id="pemPanelText">
+              La humanidad llegó a un Marte terraformado a medias. Algo ocurrió en las
+              colonias, se perdió el contacto y una nueva misión fue enviada para
+              averiguar la verdad.
+            </p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="pem-footer">
+    Perdidos en Marte — Proyecto de Ignacio Kael Vergara Moraga
+  </footer>
+
+  <script src="js/pem.js"></script>
+</body>
+</html>

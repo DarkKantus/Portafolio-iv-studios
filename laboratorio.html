@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laboratorio</title>
+  <link rel="stylesheet" href="css/skeleton.css" />
+</head>
+<body class="lab-page">
+  <main class="oneshot-shell">
+    <header class="oneshot-topbar">
+      <a class="skeleton-back" href="index.html">↩ Portal</a>
+      <div class="oneshot-hero">
+        <h1>Laboratorio</h1>
+        <p class="oneshot-lead">Trabajos de exploración conceptual y técnica</p>
+      </div>
+    </header>
+
+    <section class="oneshot-stage lab-stage" aria-label="Proyectos de laboratorio">
+      <nav class="oneshot-tabs lab-tabs" aria-label="Seleccionar proyecto">
+        <button class="oneshot-tab is-active" type="button" data-lab="agem">Demo app financiera</button>
+        <button class="oneshot-tab" type="button" data-lab="bca-web">BCA Web</button>
+        <button class="oneshot-tab" type="button" data-lab="namyra">Proyecto Namyra</button>
+        <button class="oneshot-tab" type="button" data-lab="cosplayers">Cosplayers</button>
+        <button class="oneshot-tab" type="button" data-lab="codex">Libro</button>
+      </nav>
+
+      <article class="oneshot-panel lab-panel" id="labPanel">
+        <div class="lab-copy">
+          <h2 id="labTitle">Aplicación financiera “AGEM”</h2>
+          <p id="labDescription">Esta aplicación buscaba ser una plataforma para contadores, empresas y personas que, mediante una conexión directa con el SII de Chile, podía entregar datos precisos, ordenados y fácilmente legibles.</p>
+          <ul class="lab-access" id="labAccess" hidden></ul>
+          <div class="lab-audio" id="labAudio" hidden>
+            <audio controls preload="metadata" aria-label="Reproductor local de Namyra"></audio>
+            <span>Sintetización de voz para proyecto Namyra</span>
+          </div>
+        </div>
+        <div class="lab-media">
+          <aside class="lab-visual" id="labVisual">Ficha visual / imágenes futuras</aside>
+          <p class="lab-link" id="labLink" hidden><a href="#" target="_blank" rel="noopener noreferrer"></a></p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <div class="lab-lightbox" id="labLightbox" hidden role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+    <button class="lab-lightbox__close" type="button" aria-label="Cerrar imagen">×</button>
+    <img id="labLightboxImage" src="" alt="" />
+  </div>
+
+  <script>
+    const labProjects = {
+      agem: {
+        title: 'Aplicación financiera “AGEM”',
+        description: 'Esta aplicación buscaba ser una plataforma para contadores, empresas y personas que, mediante una conexión directa con el SII de Chile, podía entregar datos precisos, ordenados y fácilmente legibles. Esta app permitía hacer centralizaciones, extracción de datos, informes y múltiples cosas más. Quedó en su estado actual, funcional pero inútil, por falta de recursos.',
+        access: [
+          { role: 'Administradores', detail: 'trabajadores de la empresa y desarrolladores', tone: 'admin' },
+          { role: 'Contables', detail: 'profesionales de contabilidad', tone: 'accounting' },
+          { role: 'Usuarios', detail: 'empresas y personas naturales', tone: 'users' }
+        ],
+        visual: { src: 'assets/img/Laboratorio/Aplicación Financiera - AGEM/main.png', alt: 'Aplicación financiera AGEM' },
+        link: { href: 'https://sii-alpha3.lovable.app/balance', label: 'Abrir demo de AGEM ↗' }
+      },
+      'bca-web': {
+        title: 'Aplicación web de BattleChamp Arena',
+        description: 'Primer esbozo de la digitalización de BCA. Nunca se pudo terminar por falta de recursos, pero se hizo un protosistema de combate, un sistema de tiendas, elección de personajes, inventario y combate.',
+        visual: { src: 'assets/img/Laboratorio/BattleChamp Arena - Web Version/BCA web.png', alt: 'Aplicación web de BattleChamp Arena' },
+        link: { href: 'https://battlechamp-arena-preview.lovable.app', label: 'Visitar prototipo de BCA ↗' }
+      },
+      namyra: {
+        title: 'Agente y avatar IA',
+        description: 'Namyra es el personaje que he estado construyendo como experimento virtual. La idea es lograr hacer una agente autónoma, con voz propia, agencia y múltiples avatares. Este concepto es una prueba de concatenación de múltiples sistemas, ya que se planea hacer instancias de interacción directa, voz a tiempo real, integración con chats en vivo, integración y animación en tiempo real.',
+        visual: { src: 'assets/img/Laboratorio/Proyecto Namyra/Namyra Animada.png', alt: 'Proyecto Namyra' },
+        audio: {
+          src: 'assets/img/Laboratorio/Proyecto Namyra/Namyra-intro-portal-v2.mp3',
+          footer: 'Sintetización de voz para proyecto Namyra'
+        }
+      },
+      cosplayers: {
+        title: 'Personajes de Videojuegos a personas reales',
+        description: 'Este es un antiguo proyecto que hice por allá 2023. No quise dejarlo de lado porque creo que hay una interpretación muy interesante al convertir personajes de ficción —en este caso personajes de Warcraft y Diablo— a su versión humana realista. Aquí algunos ejemplos de lo que hice en aquellos tiempos.',
+        visual: { src: 'assets/img/Laboratorio/Personajes a Realidad/Personajes a realidad.jpg', alt: 'Personajes de videojuegos a personas reales' }
+      },
+      codex: {
+        title: 'CODEX LUMÍNICUS',
+        description: 'Codex Lumínicus es un libro o tratado que busca la unificación de diversos saberes científicos, filosóficos, místico-religiosos, esotéricos, astronómicos, astrológicos, alquímicos y psicológicos. La idea de este libro es tomar un concepto clave y analizarlo desde todos los puntos de vista posibles para llegar a alguna conclusión. Es un ejercicio para comparar perspectivas de un mismo concepto y ver cómo los grandes exponentes en sus áreas lo entendían. Actualmente solo llevo un capítulo, pero es un proyecto que no quiero tomarme a la ligera. Estimo una década más para sacarlo como me gustaría.',
+        visual: { src: 'assets/img/Laboratorio/Codex Lumínicus/primeras páginas.png', alt: 'Primeras páginas de CODEX LUMÍNICUS' }
+      }
+    };
+
+    const panel = document.getElementById('labPanel');
+    const title = document.getElementById('labTitle');
+    const description = document.getElementById('labDescription');
+    const access = document.getElementById('labAccess');
+    const visual = document.getElementById('labVisual');
+    const labLink = document.getElementById('labLink');
+    const labAudio = document.getElementById('labAudio');
+    const lightbox = document.getElementById('labLightbox');
+    const lightboxImage = document.getElementById('labLightboxImage');
+    const closeLightboxButton = lightbox.querySelector('.lab-lightbox__close');
+
+    function openLightbox(src, alt) {
+      lightboxImage.src = src;
+      lightboxImage.alt = alt;
+      lightbox.hidden = false;
+      closeLightboxButton.focus();
+    }
+
+    function closeLightbox() {
+      lightbox.hidden = true;
+      lightboxImage.removeAttribute('src');
+      lightboxImage.alt = '';
+    }
+
+    function fillLab(key) {
+      const project = labProjects[key];
+      title.textContent = project.title;
+      description.textContent = project.description;
+
+      if (project.access) {
+        access.innerHTML = project.access.map((item) => `<li class="lab-access__item lab-access__item--${item.tone}"><strong>${item.role}</strong><span>(${item.detail})</span></li>`).join('');
+        access.hidden = false;
+      } else {
+        access.innerHTML = '';
+        access.hidden = true;
+      }
+
+      if (project.visual) {
+        visual.innerHTML = `<button class="lab-image-button" type="button" aria-label="Ver ${project.visual.alt} a tamaño completo"><img src="${project.visual.src}" alt="${project.visual.alt}"></button>`;
+        visual.classList.add('has-image');
+      } else {
+        visual.textContent = 'Ficha visual / imágenes futuras';
+        visual.classList.remove('has-image');
+      }
+
+      const link = labLink.querySelector('a');
+      if (project.link) {
+        link.href = project.link.href;
+        link.textContent = project.link.label;
+        labLink.hidden = false;
+      } else {
+        link.removeAttribute('href');
+        link.textContent = '';
+        labLink.hidden = true;
+      }
+
+      const audioPlayer = labAudio.querySelector('audio');
+      const audioFooter = labAudio.querySelector('span');
+      if (project.audio) {
+        audioPlayer.src = project.audio.src;
+        audioPlayer.load();
+        audioFooter.textContent = project.audio.footer;
+        labAudio.hidden = false;
+      } else {
+        audioPlayer.pause();
+        audioPlayer.removeAttribute('src');
+        audioPlayer.load();
+        labAudio.hidden = true;
+      }
+    }
+
+    function renderLab(key, animate = true) {
+      if (!animate) {
+        fillLab(key);
+        return;
+      }
+      panel.classList.remove('is-entering');
+      panel.classList.add('is-switching');
+      window.setTimeout(() => {
+        fillLab(key);
+        panel.classList.remove('is-switching');
+        void panel.offsetWidth;
+        panel.classList.add('is-entering');
+      }, 150);
+    }
+
+    document.querySelectorAll('[data-lab]').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('[data-lab]').forEach((item) => item.classList.toggle('is-active', item === tab));
+        renderLab(tab.dataset.lab);
+      });
+    });
+
+    visual.addEventListener('click', (event) => {
+      const image = event.target.closest('.lab-image-button img');
+      if (image) openLightbox(image.currentSrc || image.src, image.alt);
+    });
+    closeLightboxButton.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !lightbox.hidden) closeLightbox();
+    });
+
+    renderLab('agem', false);
+  </script>
+    
+    <!-- =========================
+         PIE DE PÁGINA
+         ========================= -->
+    
+<footer class="site-footer">
+  <div>IV Studios - Ignacio Vergara Moraga</div>
+  <div>1.0/Julio/2026</div>
+</footer>
+</body>
+</html>

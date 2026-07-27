@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perdidos en Marte (PeM)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/pem.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+  <section class="pem-command">
+    <div class="pem-command__shell">
+      <aside class="pem-command__sidebar">
+        <div class="pem-brand">
+          <div id="mars-globe"></div>
+          <div class="pem-brand__copy">
+            <p class="pem-brand__eyebrow">Proyecto narrativo / videojuego</p>
+            <h1>Perdidos en Marte</h1>
+            <p class="pem-brand__text">Una expedición viaja al planeta rojo para descubrir qué ocurrió con las colonias incomunicadas, sobrevivir al Marcurenio y regresar a la Tierra con la cura.</p>
+          </div>
+        </div>
+      </aside>
+
+      <div class="pem-command__main">
+        <header class="pem-topbar">
+          <div class="pem-topbar__actions">
+            <a class="pem-topbar__button" href="index.html" aria-label="Volver al index">↩</a>
+            <button class="pem-topbar__button" id="pemThemeToggle" type="button" aria-label="Cambiar modo oscuro">☾</button>
+          </div>
+          <nav class="pem-nav" aria-label="Navegación principal">
+            <div class="pem-nav__group pem-nav__group--direct" data-menu="mundo">
+              <button class="pem-nav__trigger is-active" type="button" data-action="planet">Mundo</button>
+            </div>
+
+            <div class="pem-nav__group" data-menu="mecanicas">
+              <button class="pem-nav__trigger" type="button">Mecánicas</button>
+              <div class="pem-submenu">
+                <button class="pem-submenu__item" type="button" data-panel-title="Eventos" data-panel-kicker="Mecánicas" data-panel-text="En cada avance algo sucederá. Tormentas de arena, Volcanes, Zonas de una extraña plaga, encuentros fortuitos. Es su deber, sortearlas con éxito." data-panel-images="assets/img/pem/Eventos/evento-0.png|assets/img/pem/Eventos/evento-1.png|assets/img/pem/Eventos/evento-2.png|assets/img/pem/Eventos/evento-3.png|assets/img/pem/Eventos/evento-4.png|assets/img/pem/Eventos/evento-5.png">Eventos</button>
+                <button class="pem-submenu__item" type="button" data-panel-title="Enemigos" data-panel-kicker="Mecánicas" data-panel-text="En el proyecto PeM usamos el sistema H.A.M.I para definir la naturaleza de nuestros enemigos. Humanoides que perdieron la cordura al ver a su planeta caer, Aberraciones que devoran y destruyen todo a su paso, Mutaciones hórridas que mezclan genes dispares e Insectoides gigantes que crecieron para hacer mella a la humanidad." data-panel-images="assets/img/pem/Enemigos/combate-1.png|assets/img/pem/Enemigos/combate-2.png|assets/img/pem/Enemigos/combate-3.png|assets/img/pem/Enemigos/combate-4.png|assets/img/pem/Enemigos/conceptual-2.png">Enemigos</button>
+                <button class="pem-submenu__item" type="button" data-panel-title="Objetos" data-panel-kicker="Mecánicas" data-panel-text="Armas de fuego y energéticas. Armas explosivas y cuerpo a cuerpo. Armaduras y artefactos, son parte del equipo que los astronautas pueden llevar. ¿Será suficiente este equipo para poder sobrevivir?" data-panel-images="assets/img/pem/Objetos/Desintegrador.png|assets/img/pem/Objetos/exoeskeleto.jpg|assets/img/pem/Objetos/Francotirador Laser.png|assets/img/pem/Objetos/francotirador.png|assets/img/pem/Objetos/fusil automático.png|assets/img/pem/Objetos/grid_0.png|assets/img/pem/Objetos/Inyector.png|assets/img/pem/Objetos/Lanzallamas Portatil.png">Objetos</button>
+              </div>
+            </div>
+
+            <div class="pem-nav__group pem-nav__group--direct" data-menu="arte">
+              <button class="pem-nav__trigger" type="button" data-panel-title="Conceptos" data-panel-kicker="Arte" data-panel-text="Arte conceptual y exploratorio de ruinas marcianas, edificios hidropónicos y mutaciones vivas. Esto, y mucha más, construye parte de la identidad visual de Perdidos en Marte." data-panel-images="assets/img/pem/Arte/Autopcia mutante.png|assets/img/pem/Arte/centro botanico abandonado.png|assets/img/pem/Arte/conceptual-1.png|assets/img/pem/Arte/depósito de energía.png|assets/img/pem/Arte/Torre botanica.png">Arte</button>
+            </div>
+          </nav>
+        </header>
+
+        <section class="pem-planet-module" id="pemPlanetModule" aria-hidden="true">
+          <div class="pem-planet-stage">
+            <div id="mars-globe-large"></div>
+            <button class="pem-planet-node" type="button" data-lat="24" data-lon="-35" data-node-kicker="Zona recuperada" data-node-title="Bunker militar" data-node-image="./assets/img/pem/Mapa-Globo/Gran Bunker Militar.png" data-node-text="Un gran muro de concreto gris se alza dentro de una montaña. El complejo militar sigue en pie y, dentro de lo debilitado que está, ofrece su ayuda."><span></span></button>
+            <button class="pem-planet-node" type="button" data-lat="-5" data-lon="32" data-node-kicker="Zona recuperada" data-node-title="Torre botánica" data-node-image="./assets/img/pem/Mapa-Globo/Centro científico Keops.png" data-node-text="Una gran torre rodeada de verdes vegetales radiantes. Uno de los pocos lugares que aún siguen en pie."><span></span></button>
+            <button class="pem-planet-node" type="button" data-lat="-32" data-lon="-62" data-node-kicker="Amenaza biológica" data-node-title="Corazón del Enjambre" data-node-image="./assets/img/pem/Mapa-Globo/Corazón del Enjambre.png" data-node-text="Una aberrante criatura palpitante que se fusionó a la tierra. De ella emanan huevos y consume los cadáveres de los caídos."><span></span></button>
+            <button class="pem-planet-node" type="button" data-lat="42" data-lon="56" data-node-kicker="Hallazgo antiguo" data-node-title="Cueva Milenaria" data-node-image="./assets/img/pem/Mapa-Globo/Cueva Milenaria.jpg" data-node-text="Un ancestral pasaje con extraños símbolos escritos. ¿Hubo alguien en el planeta antes que los humanos?"><span></span></button>
+            <button class="pem-planet-node" type="button" data-lat="-48" data-lon="8" data-node-kicker="Infraestructura" data-node-title="Estación solar" data-node-image="./assets/img/pem/Mapa-Globo/Estacion solar Rhælios.png" data-node-text="La estación energética más importante del planeta. Sus ruinas aún conservan la utilidad de sus días de gloria."><span></span></button>
+            <button class="pem-planet-node" type="button" data-lat="12" data-lon="-104" data-node-kicker="Manufactura" data-node-title="Impresora 3D" data-node-image="./assets/img/pem/Mapa-Globo/Impresora 3D de Tierra Marciana.png" data-node-text="Un amplio complejo industrial que sería el estandarte de la arquitectura humana en Marte durante décadas. Ahora son ruinas apenas útiles."><span></span></button>
+          </div>
+          <div class="pem-planet-brief" aria-hidden="true">
+            <p class="pem-planet-hint">mensajes de ayuda</p>
+            <p class="pem-planet-brief__kicker" id="pemPlanetKicker"></p>
+            <h2 class="pem-planet-brief__title" id="pemPlanetTitle"></h2>
+            <p class="pem-planet-brief__text" id="pemPlanetText"></p>
+          </div>
+        </section>
+
+        <section class="pem-display" aria-live="polite">
+          <div class="pem-display__visual" id="pemVisual"></div>
+          <div class="pem-display__content">
+            <p class="pem-display__kicker" id="pemPanelKicker">Mundo</p>
+            <h2 class="pem-display__title" id="pemPanelTitle">Historia</h2>
+            <p class="pem-display__text" id="pemPanelText">Hace 3 años perdimos contacto con nuestra colonia marciana en la tierra. Todos nuestros esfuerzos han sido en vano. Reunimos a un grupo de élite científica para que investigue que sucedió, pero al llegar, su nave se estrelló...</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+  
+  <script src="js/pem.js"></script>
+    
+    <!-- =========================
+         PIE DE PÁGINA
+         ========================= -->
+    
+<footer class="site-footer">
+  <div>IV Studios - Ignacio Vergara Moraga</div>
+  <div>1.0/Julio/2026</div>
+</footer>
+</body>
+</html>

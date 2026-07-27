@@ -1,0 +1,11 @@
+# Local/editor noise
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+
+# Large editable source files kept outside normal web commit unless explicitly needed
+*.psd
+
+# Runtime/log outputs
+*.log

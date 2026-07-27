@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videojuegos / Prototipos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;600;700;800;900&family=Kalam:wght@300;400;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/videojuegos.css" />
+</head>
+<body class="theme-hub">
+  <main class="games-shell" aria-live="polite">
+    <a class="games-back" href="index.html" aria-label="Volver al Portal de Kael">↩ Portal</a>
+
+    <section class="games-stage" id="gamesStage" aria-label="Videojuegos y prototipos">
+      <div class="games-bg" id="gamesBg"></div>
+      <div class="games-scan"></div>
+
+      <header class="games-header">
+        <div class="games-titleblock">
+          <p class="games-kicker" id="projectKicker">Prototipos: videojuegos</p>
+          <h1 id="projectTitle">Mundos jugables en laboratorio.</h1>
+          <p class="games-lead" id="projectLead">
+            Cosas muy WIP, muy verdes y todavía en mesa de disección: prototipos que existen para probar tono,
+            sistemas y fantasías jugables antes de convertirse en algo definitivo.
+          </p>
+        </div>
+        <div class="project-logo-box" id="projectLogoBox" hidden>
+          <img id="projectLogo" src="" alt="" />
+        </div>
+      </header>
+
+      <section class="games-content" id="projectContent">
+        <div class="hub-panel" id="hubPanel">
+          <p class="hub-panel__tag">Selecciona un prototipo</p>
+          <h2>Una sola pantalla, dos experimentos.</h2>
+          <p>
+            Este hub funciona como vitrina rápida: eliges un proyecto y toda la escena cambia — fondo, imágenes,
+            tono, mecánicas y lectura visual — sin navegar hacia abajo.
+          </p>
+        </div>
+
+        <div class="project-view" id="projectView" hidden>
+          <div class="project-media" id="projectMedia"></div>
+          <aside class="project-dossier">
+            <h2 id="projectSubtitle"></h2>
+            <p id="projectDescription"></p>
+            <div class="project-features" id="projectFeatures"></div>
+            <div class="project-meter" id="projectMeter"></div>
+          </aside>
+        </div>
+      </section>
+
+      <nav class="project-picker" aria-label="Selector de prototipo">
+        <button class="project-card" type="button" data-project="am">
+          <strong>Archeology Master</strong>
+          <em>Arqueología / Investigación / Interpretación</em>
+        </button>
+        <button class="project-card project-card--danger" type="button" data-project="df30">
+          <strong>30 días para el fin</strong>
+          <em>Supervivencia / Gestión / Narrativa</em>
+        </button>
+      </nav>
+    </section>
+  </main>
+
+  <script src="js/videojuegos.js"></script>
+    
+    <!-- =========================
+         PIE DE PÁGINA
+         ========================= -->
+    
+<footer class="site-footer">
+  <div>IV Studios - Ignacio Vergara Moraga</div>
+  <div>1.0/Julio/2026</div>
+</footer>
+</body>
+</html>

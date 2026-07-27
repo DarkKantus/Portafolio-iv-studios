@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Archeology Master</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/am.css" />
+</head>
+<body>
+  <main class="am-page">
+    <section class="am-hero" aria-label="Presentación de Archeology Master">
+      <div class="am-hero__shade"></div>
+      <a class="am-back" href="index.html" aria-label="Volver al Portal de Kael">↩ Portal</a>
+
+      <div class="am-hero__content">
+        <img class="am-logo" src="assets/img/AM/logo.png" alt="Archeology Master" />
+        <p class="am-kicker">Investigación arqueológica / aventura narrativa</p>
+        <h1>Descubre, limpia, interpreta.</h1>
+        <p class="am-lead">
+          Archeology Master es un videojuego sobre transformar hallazgos antiguos en conocimiento:
+          cada pieza encontrada debe ser observada, restaurada, fechada y defendida en un dossier propio.
+        </p>
+        <div class="am-hero__actions">
+          <a href="#dossier" class="am-button am-button--primary">Abrir dossier</a>
+          <a href="#artefacts" class="am-button">Ver artefactos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="am-section am-section--dossier" id="dossier">
+      <div class="am-section__copy">
+        <p class="am-eyebrow">Sistema central</p>
+        <h2>El dossier no es decoración: es la investigación.</h2>
+        <p>
+          El progreso no depende solo de encontrar objetos, sino de construir una lectura plausible de ellos.
+          El jugador reúne pistas, cruza contexto, limpia capas de deterioro y redacta una interpretación que
+          puede cambiar el valor histórico de la pieza.
+        </p>
+        <ul class="am-loop" aria-label="Ciclo de juego">
+          <li><span>01</span>Explorar</li>
+          <li><span>02</span>Limpiar</li>
+          <li><span>03</span>Datar</li>
+          <li><span>04</span>Interpretar</li>
+          <li><span>05</span>Documentar</li>
+        </ul>
+      </div>
+
+      <div class="am-dossier-card" aria-label="Vista conceptual del dossier">
+        <img src="assets/img/AM/libreta-bg.png" alt="Libreta de investigación" />
+        <div class="am-dossier-card__note">
+          <strong>Ficha provisional</strong>
+          <span>Material: cerámica / sedimento rojizo</span>
+          <span>Hipótesis: uso ritual-doméstico</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="am-workbench" aria-label="Mesa de limpieza arqueológica">
+      <div class="am-workbench__frame">
+        <img class="am-workbench__table" src="assets/img/AM/mesa-limpieza.png" alt="Mesa de limpieza arqueológica" />
+        <img class="am-tool am-tool--brush" src="assets/img/AM/cursor-brocha.png" alt="Brocha" />
+        <img class="am-tool am-tool--chisel" src="assets/img/AM/cursor-cincel.png" alt="Cincel" />
+        <img class="am-tool am-tool--hand" src="assets/img/AM/cursor-mano.png" alt="Mano" />
+        <img class="am-tool am-tool--pen" src="assets/img/AM/cursor-pluma.png" alt="Pluma" />
+        <img class="am-tool am-tool--pencil" src="assets/img/AM/cursor-pincel.png" alt="Pincel" />
+      </div>
+      <div class="am-workbench__copy">
+        <p class="am-eyebrow">Restauración interactiva</p>
+        <h2>Una pieza cambia cuando aprendes a mirarla.</h2>
+        <p>
+          La mesa de trabajo combina herramientas táctiles con observación cualitativa. Cada raspado, pincelada o
+          nota revela información parcial: marcas, fracturas, pigmentos y pistas de uso cotidiano.
+        </p>
+      </div>
+    </section>
+
+    <section class="am-section am-section--artefacts" id="artefacts">
+      <div class="am-section__copy">
+        <p class="am-eyebrow">Artefactos</p>
+        <h2>Objetos pequeños, preguntas enormes.</h2>
+        <p>
+          Las urnas son el primer lenguaje visual de esta versión: piezas frágiles, parcialmente completas,
+          listas para ser limpiadas, comparadas y convertidas en relato histórico.
+        </p>
+      </div>
+
+      <div class="am-artefact-grid">
+        <article class="am-artefact-card">
+          <img src="assets/img/AM/urna-1.png" alt="Urna arqueológica uno" />
+          <h3>Urna 101A</h3>
+          <p>Fragmentos visibles, superficie contaminada, lectura inicial incompleta.</p>
+        </article>
+        <article class="am-artefact-card">
+          <img src="assets/img/AM/urna-2.png" alt="Urna arqueológica dos" />
+          <h3>Urna 101B</h3>
+          <p>Variación formal del mismo conjunto; su comparación abre nuevas hipótesis.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/am.js"></script>
+    
+    <!-- =========================
+         PIE DE PÁGINA
+         ========================= -->
+    
+<footer class="site-footer">
+  <div>IV Studios - Ignacio Vergara Moraga</div>
+  <div>1.0/Julio/2026</div>
+</footer>
+</body>
+</html>

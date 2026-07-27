@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multimedia — Ignacio Kael Vergara</title>
+  <link rel="stylesheet" href="css/skeleton.css" />
+  <link rel="stylesheet" href="css/multimedia.css" />
+</head>
+<body class="multimedia-page">
+  <main class="oneshot-shell multimedia-shell">
+    <header class="oneshot-topbar multimedia-topbar">
+      <a class="skeleton-back" href="index.html">↩ Portal</a>
+      <div class="oneshot-hero">
+        <h1>Estudio</h1>
+        <p class="oneshot-lead">Antiguas composiciones originales y canales de contenido audiovisual</p>
+      </div>
+    </header>
+
+    <section class="oneshot-stage multimedia-stage" aria-label="Archivo multimedia">
+      <article class="oneshot-panel media-panel media-panel--music" aria-labelledby="musicTitle">
+        <div class="media-panel__head">
+          <div>
+            <p class="media-eyebrow">Archivo activo</p>
+            <h2 id="musicTitle">Música</h2>
+          </div>
+          <span class="signal-status"><i></i> señal local</span>
+        </div>
+
+        <div class="now-playing now-playing--native">
+          <div class="now-playing__meta">
+            <p class="media-eyebrow">Interpretando ahora</p>
+            <h3 id="trackTitle">Muerte</h3>
+            <p id="trackCaption">Archivo personal · PeM</p>
+          </div>
+          <audio class="audio-player" id="audioPlayer" controls preload="metadata" src="assets/música/Muerte.mp3"></audio>
+        </div>
+
+        <div class="track-list" id="trackList" aria-label="Pistas disponibles">
+          <button class="track-button is-active" type="button" data-src="assets/música/Muerte.mp3" data-title="Muerte"><span class="track-number">01</span><strong>Muerte</strong><span class="track-type">PeM</span></button>
+          <button class="track-button" type="button" data-src="assets/música/Back in Mars.mp3" data-title="Back in Mars"><span class="track-number">02</span><strong>Back in Mars</strong><span class="track-type">PeM</span></button>
+          <button class="track-button" type="button" data-src="assets/música/Arquitectura.mp3" data-title="Arquitectura"><span class="track-number">03</span><strong>Arquitectura</strong><span class="track-type">Piano</span></button>
+          <button class="track-button" type="button" data-src="assets/música/Posada Tierra Roja.mp3" data-title="Posada Tierra Roja"><span class="track-number">04</span><strong>Posada Tierra Roja</strong><span class="track-type">PeM</span></button>
+          <button class="track-button" type="button" data-src="assets/música/Vanguard Dream.mp3" data-title="Vanguard Dream"><span class="track-number">05</span><strong>Vanguard Dream</strong><span class="track-type">Piano</span></button>
+          <button class="track-button" type="button" data-src="assets/música/Enjambre de la montaña.mp3" data-title="Enjambre de la montaña"><span class="track-number">06</span><strong>Enjambre de la montaña</strong><span class="track-type">PeM</span></button>
+          <button class="track-button" type="button" data-src="assets/música/Memorie.mp3" data-title="Memorie"><span class="track-number">07</span><strong>Memorie</strong><span class="track-type">Piano</span></button>
+          <button class="track-button" type="button" data-src="assets/música/Monkey Collossus.mp3" data-title="Monkey Collossus"><span class="track-number">08</span><strong>Monkey Collossus</strong><span class="track-type">Composición</span></button>
+          <button class="track-button" type="button" data-src="assets/música/Ricoshet.mp3" data-title="Ricoshet"><span class="track-number">09</span><strong>Ricoshet</strong><span class="track-type">Composición</span></button>
+          <button class="track-button" type="button" data-src="assets/música/Solitude Dream.mp3" data-title="Solitude Dream"><span class="track-number">10</span><strong>Solitude Dream</strong><span class="track-type">Piano</span></button>
+        </div>
+
+      </article>
+
+      <article class="oneshot-panel media-panel media-panel--video" aria-labelledby="videoTitle">
+        <div class="media-panel__head">
+          <div>
+            <h2 id="videoTitle">Visuales</h2>
+          </div>
+          <span class="signal-status signal-status--idle"><i></i> dos canales</span>
+        </div>
+
+        <div class="signal-window" aria-hidden="true">
+          <div class="signal-window__frame"></div>
+          <div class="signal-window__scan"></div>
+          <p>Videoensayos / Análisis / Videojuegos</p>
+        </div>
+
+        <div class="external-list">
+          <a class="external-card" href="https://www.youtube.com/@Nacho_Kael" aria-disabled="false">
+            <strong>YouTube</strong>
+            <span>Videoensayos Gaming, Videos musicales producidos.</span>
+          </a>
+        </div>
+        
+      </article>
+    </section>
+  </main>
+
+  <script>
+    const player = document.getElementById('audioPlayer');
+    const trackTitle = document.getElementById('trackTitle');
+    const trackCaption = document.getElementById('trackCaption');
+    document.querySelectorAll('.track-button').forEach((button) => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.track-button').forEach((item) => item.classList.toggle('is-active', item === button));
+        player.src = button.dataset.src;
+        trackTitle.textContent = button.dataset.title;
+        trackCaption.textContent = `Archivo personal · ${button.querySelector('.track-type').textContent}`;
+        player.play().catch(() => {});
+      });
+    });
+  </script>
+    
+    <!-- =========================
+         PIE DE PÁGINA
+         ========================= -->
+    
+<footer class="site-footer">
+  <div>IV Studios - Ignacio Vergara Moraga</div>
+  <div>1.0/Julio/2026</div>
+</footer>
+</body>
+</html>

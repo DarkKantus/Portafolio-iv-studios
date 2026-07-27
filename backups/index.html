@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portal de Kael</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="site-header">
+      <h1>Portal de Kael</h1>
+      <p class="site-subtitle">Artes, oficios y mundos de un caballero moderno</p>
+    </header>
+
+    <main class="site-main">
+  <div class="portal-bg"></div>
+
+  <section class="radial-menu">
+    <!-- SVG para círculo y líneas -->
+    <svg class="radial-orbit" viewBox="0 0 100 100" aria-hidden="true"></svg>
+
+    <!-- Núcleo central -->
+    <a href="sobre.html" class="radial-core">
+      <span class="core-title">Kael</span>
+      <span class="core-subtitle">Sobre mí</span>
+      <img class="core-logo" src="" alt="" />
+    </a>
+
+    <!-- 7 botones alrededor del núcleo -->
+    <a class="radial-item"
+       href="bca.html"
+       data-section="bca"
+       data-bg="assets/img/arena2.png"
+       data-core-logo="assets/icon/bca-logo.png"
+       data-subtitle="Juego de mesa RPG medieval">
+      <img src="assets/icon/bca-logo.png" class="icon" alt="Battlechamp Arena" />
+      <span class="radial-label">Battlechamp Arena</span>
+    </a>
+
+    <a class="radial-item"
+            href="pem.html"
+            data-section="pem"
+            data-bg="assets/img/bg-pem.png"
+            data-core-logo="assets/icon/bca-logo.png"
+            data-subtitle="Juego cooperativo de supervivencia espacial">
+      <img src="assets/icon/pem.png" class="icon" alt="Perdidos en Marte" />
+      <span class="radial-label">Perdidos en Marte</span>
+    </a>
+
+   <button class="radial-item"
+        href="am.html"
+        data-section="am"
+        data-bg="assets/img/back-am.png"
+        data-core-logo="assets/icon/am.png"
+        data-title="Archeology Master"
+        data-subtitle="Juego narrativo de investigación arqueológica">
+  <img src="assets/icon/am.png" class="icon" alt="Archeology Master" />
+  <span class="radial-label">Archeology Master</span>
+</button>
+
+        <button class="radial-item"
+            data-section="Otros Proyectos"
+            data-bg="assets/img/otros.png"
+            data-subtitle="Referentes, inspiraciones, ideas descartadas">
+      <img src="assets/icon/i-otros.png" class="icon" alt="Otros Proyectos" />
+      <span class="radial-label">Otros Proyectos</span>
+
+    <button class="radial-item"
+            data-section="Taller de Kael"
+            data-bg="assets/img/bg-taller.png"
+            data-subtitle="Proyectos y artesanías físicas">
+      <img src="assets/icon/taller.png" class="icon" alt="Taller de Kael" />
+      <span class="radial-label">Taller de Kael</span>
+    </button>
+
+    <button class="radial-item"
+            data-section="Música & Audiovisuales"
+            data-bg="assets/img/bg-mya.png"
+            data-subtitle="Música propia y proyectos audiovisuales">
+      <img src="assets/icon/music.png" class="icon" alt="Música y videos" />
+      <span class="radial-label">Música y videos</span>
+    </button>
+
+
+
+    </button>
+    <button class="radial-item"
+            data-section="Portafolio"
+            data-bg="assets/img/bg-portafolio.jpg"
+            data-core-logo="assets/logos/kael-logo.png"
+            data-subtitle="Galería de trabajos antiguos y en proceso">
+      <img src="assets/icon/i-portafolio.png" class="icon" alt="Portafolio" />
+      <span class="radial-label">Portafolio</span>
+    </button>
+
+  </section>
+
+</main>
+
+
+    <footer class="site-footer">
+      <small>© <span id="year"></span> Kael / IV Studios</small>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

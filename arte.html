@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arte / Diseño visual</title>
+  <link rel="stylesheet" href="css/skeleton.css" />
+</head>
+<body class="art-page">
+  <main class="oneshot-shell">
+    <header class="oneshot-topbar">
+      <a class="skeleton-back" href="index.html">↩ Portal</a>
+      <div class="oneshot-hero">
+        <p class="oneshot-kicker">Galería temática</p>
+        <h1>Arte / Diseño visual</h1>
+      </div>
+    </header>
+
+    <section class="oneshot-stage art-stage" aria-label="Categorías de arte y diseño">
+      <article class="oneshot-panel art-panel">
+        <nav class="oneshot-tabs" aria-label="Temas de galería">
+          <button class="oneshot-tab is-active" type="button" data-art="personajes">Personajes</button>
+          <button class="oneshot-tab" type="button" data-art="locaciones">Locaciones</button>
+          <button class="oneshot-tab" type="button" data-art="diseno">Diseño</button>
+          <button class="oneshot-tab" type="button" data-art="marcas">Marcas</button>
+        </nav>
+
+        <div class="art-gallery-wrap">
+          <button class="art-gallery__nav art-gallery__nav--prev" type="button" aria-label="Ver obras anteriores">‹</button>
+          <div class="art-gallery" id="artGallery" aria-live="polite"></div>
+          <button class="art-gallery__nav art-gallery__nav--next" type="button" aria-label="Ver obras siguientes">›</button>
+        </div>
+
+        <div class="art-copy">
+          <h2 id="artTitle">Personajes</h2>
+          <p id="artDescription">Ilustraciones y arte digital hecho a lo largo de los años. Algunos para proyectos, otros por entretenimiento.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <div class="art-lightbox" id="artLightbox" hidden>
+    <button class="art-lightbox__close" type="button" aria-label="Cerrar imagen">×</button>
+    <button class="art-lightbox__nav art-lightbox__nav--prev" type="button" aria-label="Imagen anterior">‹</button>
+    <img src="" alt="" />
+    <button class="art-lightbox__nav art-lightbox__nav--next" type="button" aria-label="Imagen siguiente">›</button>
+    <p></p>
+  </div>
+
+  <script>
+    const artPools = {
+      personajes: {
+        title: 'Personajes',
+        description: 'Ilustraciones y arte digital hecho a lo largo de los años. Algunos para proyectos, otros por entretenimiento.',
+        works: [
+          ['assets/img/Arte y diseño/Personajes/Concepto 30DF - Personaje Grace.png', 'Concepto 30DF — Personaje Grace'],
+          ['assets/img/Arte y diseño/Personajes/Concepto 30DF - Retratos psicológicos.png', 'Concepto 30DF — Retratos psicológicos'],
+          ['assets/img/Arte y diseño/Personajes/Ballestera Naomi.png', 'Ballestera Naomi'],
+          ['assets/img/Arte y diseño/Personajes/BCA - León.png', 'BCA — León'],
+          ['assets/img/Arte y diseño/Personajes/BCA - Lobo.png', 'BCA — Lobo'],
+          ['assets/img/Arte y diseño/Personajes/BCA - Recolor exclusivo de Asesino.png', 'BCA — Recolor exclusivo de Asesino'],
+          ['assets/img/Arte y diseño/Personajes/Concepto - Animé occidental.jpeg', 'Concepto — Animé occidental'],
+          ['assets/img/Arte y diseño/Personajes/Concepto - Astróscopo.jpg', 'Concepto — Astróscopo'],
+          ['assets/img/Arte y diseño/Personajes/DarkNaxx.png', 'DarkNaxx'],
+          ['assets/img/Arte y diseño/Personajes/Dibujo Guerrera.jpg', 'Dibujo Guerrera'],
+          ['assets/img/Arte y diseño/Personajes/La Musa.png', 'La Musa'],
+          ['assets/img/Arte y diseño/Personajes/k3.png', 'K3'],
+          ['assets/img/Arte y diseño/Personajes/Lancero.jpg', 'Lancero'],
+          ['assets/img/Arte y diseño/Personajes/PeM - Aberraciones descontroladas.png', 'PeM — Aberraciones descontroladas'],
+          ['assets/img/Arte y diseño/Personajes/PeM - Avatar Astronauta.png', 'PeM — Avatar Astronauta'],
+          ['assets/img/Arte y diseño/Personajes/PeM - Insectoide.png', 'PeM — Insectoide'],
+          ['assets/img/Arte y diseño/Personajes/PeM - Mente Colmena.png', 'PeM — Mente Colmena']
+        ]
+      },
+      locaciones: {
+        title: 'Locaciones',
+        description: 'Paisajes de distintos tipos hechos generalmente para los proyectos de Perdidos en Marte (temática espacial realista) y BattleChamp Arena Campaing (dibujos temática medieval).',
+        works: [
+          ['assets/img/Arte y diseño/Locaciones/BCA - Bosque Traidor.png', 'BCA — Bosque Traidor'],
+          ['assets/img/Arte y diseño/Locaciones/BCA - Castillo Ruinoso.png', 'BCA — Castillo Ruinoso'],
+          ['assets/img/Arte y diseño/Locaciones/BCA - Molino.png', 'BCA — Molino'],
+          ['assets/img/Arte y diseño/Locaciones/Concepto - Astróscopo.jpg', 'Concepto — Astróscopo'],
+          ['assets/img/Arte y diseño/Locaciones/Arte Wallpaper.jpg', 'Arte Wallpaper'],
+          ['assets/img/Arte y diseño/Locaciones/PeM - Concepto Nevado.png', 'PeM — Concepto Nevado'],
+          ['assets/img/Arte y diseño/Locaciones/PeM - Deimos a la vista.png', 'PeM — Deimos a la vista'],
+          ['assets/img/Arte y diseño/Locaciones/PeM - Depósito.png', 'PeM — Depósito'],
+          ['assets/img/Arte y diseño/Locaciones/PeM - Estacion solar en ruinas.png', 'PeM — Estacion solar en ruinas'],
+          ['assets/img/Arte y diseño/Locaciones/PeM - Último Bastión de la Humanidad.png', 'PeM — Último Bastión de la Humanidad']
+        ]
+      },
+      diseno: {
+        title: 'Diseño',
+        description: 'Breve muestra de trabajos de distintos tipos: afiches, posters, interfaces, material promocional.',
+        works: [
+          ['assets/img/Arte y diseño/Diseño/Afiche Universitario Antidiscriminación.jpg', 'Afiche Universitario — Antidiscriminación'],
+          ['assets/img/Arte y diseño/Diseño/Alfa de Ukronía- Juego de Cartas histórico.jpeg', 'Alfa de Ukronía — Juego de Cartas histórico'],
+          ['assets/img/Arte y diseño/Diseño/BCA - Siluetas.png', 'BCA — Siluetas'],
+          ['assets/img/Arte y diseño/Diseño/Concepto promocional para BCA.png', 'Concepto promocional para BCA'],
+          ['assets/img/Arte y diseño/Diseño/Etiqueta pyme - Amor y lanas.png', 'Etiqueta pyme — Amor y lanas'],
+          ['assets/img/Arte y diseño/Diseño/Foto - Battlechamp Arena.png', 'Foto — Battlechamp Arena'],
+          ['assets/img/Arte y diseño/Diseño/Foto - Caja de BattleChamp Arena.jpeg', 'Foto — Caja de BattleChamp Arena'],
+          ['assets/img/Arte y diseño/Diseño/Foto - Escudo de madera simple.jpeg', 'Foto — Escudo de madera simple'],
+          ['assets/img/Arte y diseño/Diseño/Miniatura para Youtube - DmC realidad desde el limbo.jpg', 'Miniatura para YouTube — DmC: realidad desde el limbo'],
+          ['assets/img/Arte y diseño/Diseño/Portada Catálogo textil.jpg', 'Portada Catálogo textil'],
+          ['assets/img/Arte y diseño/Diseño/Portada revista 90+10.jpg', 'Portada revista 90+10'],
+          ['assets/img/Arte y diseño/Diseño/Portada revista Bocetos.jpg', 'Portada revista Bocetos'],
+          ['assets/img/Arte y diseño/Diseño/Poster Cinematográfico.png', 'Poster Cinematográfico'],
+          ['assets/img/Arte y diseño/Diseño/Poster Social.png', 'Poster Social'],
+          ['assets/img/Arte y diseño/Diseño/Posterior de la caja - BCA.png', 'Posterior de la caja — BCA'],
+          ['assets/img/Arte y diseño/Diseño/Principios herméticos.png', 'Principios herméticos'],
+          ['assets/img/Arte y diseño/Diseño/Proceso creativo de BCA.png', 'Proceso creativo de BCA'],
+          ['assets/img/Arte y diseño/Diseño/Render 3D - BCA.png', 'Render 3D — BCA'],
+          ['assets/img/Arte y diseño/Diseño/Screenshot de Inicio de Stream.png', 'Screenshot de Inicio de Stream'],
+          ['assets/img/Arte y diseño/Diseño/Tatuaje Tribal.png', 'Tatuaje Tribal'],
+          ['assets/img/Arte y diseño/Diseño/Trabajo sobre madera - Triqueta.jpeg', 'Trabajo sobre madera — Triqueta'],
+          ['assets/img/Arte y diseño/Diseño/Trabajo sobre piedra - Grabado artesanal.jpeg', 'Trabajo sobre piedra — Grabado artesanal'],
+          ['assets/img/Arte y diseño/Diseño/UI PeM - Beta.png', 'UI PeM — Beta'],
+          ['assets/img/Arte y diseño/Diseño/Vetorizado para laser.png', 'Vetorizado para laser']
+        ]
+      },
+      marcas: {
+        title: 'Marcas',
+        description: 'Breve muestra de Material Licenciado y de autoría propia.',
+        works: [
+          ['assets/img/Arte y diseño/Marcas/Afiche Becker.jpg', 'Afiche Becker'],
+          ['assets/img/Arte y diseño/Marcas/Afiche Vercorizado - Skyrim.png', 'Afiche Vercorizado — Skyrim'],
+          ['assets/img/Arte y diseño/Marcas/Ejemplo de Encargo - Logo.png', 'Ejemplo de Encargo — Logo'],
+          ['assets/img/Arte y diseño/Marcas/Heráldica familiar.png', 'Heráldica familiar'],
+          ['assets/img/Arte y diseño/Marcas/Logo BattleChamp Arena.png', 'Logo BattleChamp Arena'],
+          ['assets/img/Arte y diseño/Marcas/Logo IV studios.png', 'Logo IV studios'],
+          ['assets/img/Arte y diseño/Marcas/Logo PEM.jpg', 'Logo PEM'],
+          ['assets/img/Arte y diseño/Marcas/Tríptico - Diablo inmortal, frontal.png', 'Tríptico — Diablo inmortal, frontal'],
+          ['assets/img/Arte y diseño/Marcas/Tríptico - Diablo inmortal, interior.png', 'Tríptico — Diablo inmortal, interior']
+        ]
+      }
+    };
+
+    const gallery = document.getElementById('artGallery');
+    const title = document.getElementById('artTitle');
+    const description = document.getElementById('artDescription');
+    const galleryPrevButton = document.querySelector('.art-gallery__nav--prev');
+    const galleryNextButton = document.querySelector('.art-gallery__nav--next');
+    const lightbox = document.getElementById('artLightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    const lightboxCaption = lightbox.querySelector('p');
+    const prevButton = lightbox.querySelector('.art-lightbox__nav--prev');
+    const nextButton = lightbox.querySelector('.art-lightbox__nav--next');
+    let currentPoolKey = 'personajes';
+    let currentImageIndex = 0;
+    let galleryStartIndex = 0;
+    const gallerySize = 4;
+
+    function fileTitle(src) {
+      return src.split('/').pop().replace(/\.[^.]+$/, '');
+    }
+
+    function showLightboxImage(index) {
+      const works = artPools[currentPoolKey].works;
+      currentImageIndex = (index + works.length) % works.length;
+      const [src] = works[currentImageIndex];
+      const caption = fileTitle(src);
+      lightboxImg.src = src;
+      lightboxImg.alt = caption;
+      lightboxCaption.textContent = caption;
+    }
+
+    function openLightbox(index) {
+      showLightboxImage(index);
+      lightbox.hidden = false;
+    }
+
+    function renderArt(key, resetGallery = true) {
+      currentPoolKey = key;
+      if (resetGallery) galleryStartIndex = 0;
+      const pool = artPools[key];
+      const works = pool.works;
+      title.textContent = pool.title;
+      description.textContent = pool.description;
+      const visibleWorks = Array.from(
+        { length: Math.min(gallerySize, works.length) },
+        (_, offset) => ({ work: works[(galleryStartIndex + offset) % works.length], index: (galleryStartIndex + offset) % works.length })
+      );
+      gallery.innerHTML = visibleWorks.map(({ work: [src], index }) => {
+        const caption = fileTitle(src);
+        return `
+          <button class="art-preview" type="button" data-index="${index}" aria-label="Ampliar: ${caption}">
+            <img src="${src}" alt="${caption}">
+            <span class="art-preview__caption">${caption}</span>
+          </button>
+        `;
+      }).join('');
+      const canNavigate = works.length > gallerySize;
+      galleryPrevButton.disabled = !canNavigate;
+      galleryNextButton.disabled = !canNavigate;
+      gallery.querySelectorAll('.art-preview').forEach((button) => {
+        button.addEventListener('click', () => openLightbox(Number(button.dataset.index)));
+      });
+    }
+
+    function moveGallery(direction) {
+      const works = artPools[currentPoolKey].works;
+      galleryStartIndex = (galleryStartIndex + direction + works.length) % works.length;
+      renderArt(currentPoolKey, false);
+    }
+
+    document.querySelectorAll('[data-art]').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('[data-art]').forEach((item) => item.classList.toggle('is-active', item === tab));
+        renderArt(tab.dataset.art);
+      });
+    });
+    galleryPrevButton.addEventListener('click', () => moveGallery(-1));
+    galleryNextButton.addEventListener('click', () => moveGallery(1));
+    function closeLightbox() { lightbox.hidden = true; lightboxImg.src = ''; }
+    function showPrevImage() { showLightboxImage(currentImageIndex - 1); }
+    function showNextImage() { showLightboxImage(currentImageIndex + 1); }
+    lightbox.querySelector('.art-lightbox__close').addEventListener('click', closeLightbox);
+    prevButton.addEventListener('click', showPrevImage);
+    nextButton.addEventListener('click', showNextImage);
+    lightbox.addEventListener('click', (event) => { if (event.target === lightbox) closeLightbox(); });
+    window.addEventListener('keydown', (event) => {
+      if (lightbox.hidden) return;
+      if (event.key === 'Escape') closeLightbox();
+      if (event.key === 'ArrowLeft') showPrevImage();
+      if (event.key === 'ArrowRight') showNextImage();
+    });
+    renderArt('personajes');
+  </script>
+    
+    <!-- =========================
+         PIE DE PÁGINA
+         ========================= -->
+    
+<footer class="site-footer">
+  <div>IV Studios - Ignacio Vergara Moraga</div>
+  <div>1.0/Julio/2026</div>
+</footer>
+</body>
+</html>
