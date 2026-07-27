@@ -4,6 +4,10 @@ Thumbs.db
 *.tmp
 *.bak
 
+# Local Hermes work files and historical backup copies are not published
+.hermes/
+backups/
+
 # Large editable source files kept outside normal web commit unless explicitly needed
 *.psd
 
