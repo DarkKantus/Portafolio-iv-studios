@@ -545,16 +545,7 @@ body {
   }
 }
 
-/* =========================
-   FOOTER
-   ========================= */
-.site-footer {
-  position: relative;
-  z-index: 10;
-  text-align: center;
-  margin-top: 1rem;
-  opacity: 0.85;
-}
+/* El footer compartido se define en css/footer.css. */
 
 /* =========================
    BOT�N VOLVER
@@ -683,11 +674,6 @@ body {
   width: min(40rem, calc(100svh - 10.5rem), calc(100vw - 3rem));
   height: auto;
   aspect-ratio: 1;
-}
-
-.site-footer {
-  margin-top: 0;
-  font-size: 0.75rem;
 }
 
 @media (max-width: 768px) {

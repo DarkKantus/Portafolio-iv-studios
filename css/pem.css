@@ -1186,17 +1186,7 @@ body.pem-dark-mode .pem-command {
   border-color: rgba(70,184,255,0.34);
 }
 
-/* ---------- Footer ---------- */
-.pem-footer {
-  text-align: center;
-  padding: 12px;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  color: var(--pem-ink-soft);
-  opacity: 0.7;
-}
 
-/* ---------- Dark mode: surface system ---------- */
 body.pem-dark-mode {
   --pem-bg-page: #020407;
   --pem-bg-shell: #070b10;
@@ -1255,4 +1245,3 @@ body.pem-dark-mode .pem-visual {
   border-color: rgba(103,204,235,.22);
   background: #03090e;
 }
-body.pem-dark-mode .pem-footer { color: rgba(165,205,217,.72); }
