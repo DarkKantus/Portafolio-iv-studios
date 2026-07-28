@@ -29,7 +29,7 @@ const initializeBca = () => {
   let backdropCurrent = null;
   let backdropRemovalTimer = null;
 
-  const sourceKey = (item) => (item.dataset.imgFull || "").split("/").pop();
+  const sourceKey = (item) => (item.dataset.imgFull || "").split("/").pop().replace(/\.webp$/, ".png");
   const configFor = (item) => BCA_V2_ASSETS[sourceKey(item)] || null;
   const setStage = (config) => {
     if (!config || !selectStage) return;
