@@ -63,7 +63,7 @@ body {
 .lab-page {
   background:
     linear-gradient(90deg, rgba(6,8,11,.62), rgba(6,8,11,.28)),
-    url("../assets/img/Laboratorio/fondo-lab.png") center / cover no-repeat fixed;
+    url("../assets/web/img/Laboratorio/fondo-lab.webp") center / cover no-repeat fixed;
 }
 .lab-page .oneshot-shell { position: relative; z-index: 1; }
 @keyframes artDeepSpaceTwinkle {
@@ -763,7 +763,7 @@ body.about-page::before {
   --line: rgba(77, 62, 45, .48);
   background:
     linear-gradient(90deg, rgba(238,225,194,.30), rgba(238,225,194,.06) 42%, rgba(43,33,23,.10)),
-    url("../assets/img/Laboratorio/fondo-lab.png") center / cover no-repeat fixed;
+    url("../assets/web/img/Laboratorio/fondo-lab.webp") center / cover no-repeat fixed;
 }
 .lab-page::before {
   content: "";

@@ -34,7 +34,7 @@ body {
   isolation: isolate;
   background:
     linear-gradient(90deg, rgba(8,22,24,0.80), rgba(39,25,14,0.42), rgba(8,22,24,0.78)),
-    url("../assets/img/AM/menu-bg.png") center / cover no-repeat;
+    url("../assets/web/img/AM/menu-bg.webp") center / cover no-repeat;
 }
 
 .am-hero::before,
@@ -256,7 +256,7 @@ body {
   padding: clamp(24px, 4vw, 46px);
   background:
     linear-gradient(135deg, rgba(14,42,41,0.96), rgba(120,79,38,0.88)),
-    url("../assets/img/AM/menu-bg.png") center / cover no-repeat;
+    url("../assets/web/img/AM/menu-bg.webp") center / cover no-repeat;
   color: var(--am-paper-light);
 }
 

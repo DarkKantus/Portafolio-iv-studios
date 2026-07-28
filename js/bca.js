@@ -1,17 +1,17 @@
 /* BCA v2.0 — one interaction owner for hero, roster and both modals. */
 const BCA_V2_ASSETS = {
-  "g-m.png": { hero: "assets/img/BCA/g-m.png", hex: "assets/img/BCA/g4.png", crest: "assets/img/BCA/s-guerrero.png", color: "#d77b2a", glow: "rgba(215,123,42,.64)", arena: "assets/img/BCA/campaña/fondos/Posada.png" },
-  "g-f.png": { hero: "assets/img/BCA/g-f.png", hex: "assets/img/BCA/gf.png", crest: "assets/img/BCA/s-guerrero.png", color: "#d77b2a", glow: "rgba(215,123,42,.64)", arena: "assets/img/BCA/campaña/fondos/Posada.png" },
-  "d-m.png": { hero: "assets/img/BCA/d-m.png", hex: "assets/img/BCA/dm.png", crest: "assets/img/BCA/s-druida.png", color: "#87914c", glow: "rgba(135,145,76,.62)", arena: "assets/img/BCA/campaña/fondos/Torre del alquimista.png" },
-  "d-f.png": { hero: "assets/img/BCA/d-f.png", hex: "assets/img/BCA/df.png", crest: "assets/img/BCA/s-druida.png", color: "#87914c", glow: "rgba(135,145,76,.62)", arena: "assets/img/BCA/campaña/fondos/Torre del alquimista.png" },
-  "p-m.png": { hero: "assets/img/BCA/p-m.png", hex: "assets/img/BCA/pm.png", crest: "assets/img/BCA/s-paladin.png", color: "#c5a25e", glow: "rgba(197,162,94,.66)", arena: "assets/img/BCA/campaña/fondos/Finca Extraña.png" },
-  "p-f.png": { hero: "assets/img/BCA/p-f.png", hex: "assets/img/BCA/pf.png", crest: "assets/img/BCA/s-paladin.png", color: "#c5a25e", glow: "rgba(197,162,94,.66)", arena: "assets/img/BCA/campaña/fondos/Finca Extraña.png" },
-  "as-m.png": { hero: "assets/img/BCA/as-m.png", hex: "assets/img/BCA/asm.png", crest: "assets/img/BCA/s-asesino.png", color: "#c9363f", glow: "rgba(201,54,63,.68)", arena: "assets/img/BCA/campaña/fondos/Cripta Peculiar.png" },
-  "as-f.png": { hero: "assets/img/BCA/as-f.png", hex: "assets/img/BCA/asf.png", crest: "assets/img/BCA/s-asesino.png", color: "#c9363f", glow: "rgba(201,54,63,.68)", arena: "assets/img/BCA/campaña/fondos/Cripta Peculiar.png" },
-  "ba-m.png": { hero: "assets/img/BCA/ba-m.png", hex: "assets/img/BCA/bam.png", crest: "assets/img/BCA/s-ballestero.png", color: "#19b9c7", glow: "rgba(25,185,199,.68)", arena: "assets/img/BCA/campaña/fondos/Posada.png" },
-  "ba-f.png": { hero: "assets/img/BCA/ba-f.png", hex: "assets/img/BCA/baf.png", crest: "assets/img/BCA/s-ballestero.png", color: "#19b9c7", glow: "rgba(25,185,199,.68)", arena: "assets/img/BCA/campaña/fondos/Posada.png" },
-  "bl-m.png": { hero: "assets/img/BCA/bl-m.png", hex: "assets/img/BCA/bm.png", crest: "assets/img/BCA/s-blindado.png", color: "#243f9f", glow: "rgba(36,63,159,.68)", arena: "assets/img/BCA/campaña/fondos/Cripta Peculiar.png" },
-  "bl-f.png": { hero: "assets/img/BCA/bl-f.png", hex: "assets/img/BCA/bf.png", crest: "assets/img/BCA/s-blindado.png", color: "#243f9f", glow: "rgba(36,63,159,.68)", arena: "assets/img/BCA/campaña/fondos/Cripta Peculiar.png" }
+  "g-m.png": { hero: "assets/web/img/BCA/g-m.webp", hex: "assets/web/img/BCA/g4.webp", crest: "assets/web/img/BCA/s-guerrero.webp", color: "#d77b2a", glow: "rgba(215,123,42,.64)", arena: "assets/web/img/BCA/campaña/fondos/Posada.webp" },
+  "g-f.png": { hero: "assets/web/img/BCA/g-f.webp", hex: "assets/web/img/BCA/gf.webp", crest: "assets/web/img/BCA/s-guerrero.webp", color: "#d77b2a", glow: "rgba(215,123,42,.64)", arena: "assets/web/img/BCA/campaña/fondos/Posada.webp" },
+  "d-m.png": { hero: "assets/web/img/BCA/d-m.webp", hex: "assets/web/img/BCA/dm.webp", crest: "assets/web/img/BCA/s-druida.webp", color: "#87914c", glow: "rgba(135,145,76,.62)", arena: "assets/web/img/BCA/campaña/fondos/Torre del alquimista.webp" },
+  "d-f.png": { hero: "assets/web/img/BCA/d-f.webp", hex: "assets/web/img/BCA/df.webp", crest: "assets/web/img/BCA/s-druida.webp", color: "#87914c", glow: "rgba(135,145,76,.62)", arena: "assets/web/img/BCA/campaña/fondos/Torre del alquimista.webp" },
+  "p-m.png": { hero: "assets/web/img/BCA/p-m.webp", hex: "assets/web/img/BCA/pm.webp", crest: "assets/web/img/BCA/s-paladin.webp", color: "#c5a25e", glow: "rgba(197,162,94,.66)", arena: "assets/web/img/BCA/campaña/fondos/Finca Extraña.webp" },
+  "p-f.png": { hero: "assets/web/img/BCA/p-f.webp", hex: "assets/web/img/BCA/pf.webp", crest: "assets/web/img/BCA/s-paladin.webp", color: "#c5a25e", glow: "rgba(197,162,94,.66)", arena: "assets/web/img/BCA/campaña/fondos/Finca Extraña.webp" },
+  "as-m.png": { hero: "assets/web/img/BCA/as-m.webp", hex: "assets/web/img/BCA/asm.webp", crest: "assets/web/img/BCA/s-asesino.webp", color: "#c9363f", glow: "rgba(201,54,63,.68)", arena: "assets/web/img/BCA/campaña/fondos/Cripta Peculiar.webp" },
+  "as-f.png": { hero: "assets/web/img/BCA/as-f.webp", hex: "assets/web/img/BCA/asf.webp", crest: "assets/web/img/BCA/s-asesino.webp", color: "#c9363f", glow: "rgba(201,54,63,.68)", arena: "assets/web/img/BCA/campaña/fondos/Cripta Peculiar.webp" },
+  "ba-m.png": { hero: "assets/web/img/BCA/ba-m.webp", hex: "assets/web/img/BCA/bam.webp", crest: "assets/web/img/BCA/s-ballestero.webp", color: "#19b9c7", glow: "rgba(25,185,199,.68)", arena: "assets/web/img/BCA/campaña/fondos/Posada.webp" },
+  "ba-f.png": { hero: "assets/web/img/BCA/ba-f.webp", hex: "assets/web/img/BCA/baf.webp", crest: "assets/web/img/BCA/s-ballestero.webp", color: "#19b9c7", glow: "rgba(25,185,199,.68)", arena: "assets/web/img/BCA/campaña/fondos/Posada.webp" },
+  "bl-m.png": { hero: "assets/web/img/BCA/bl-m.webp", hex: "assets/web/img/BCA/bm.webp", crest: "assets/web/img/BCA/s-blindado.webp", color: "#243f9f", glow: "rgba(36,63,159,.68)", arena: "assets/web/img/BCA/campaña/fondos/Cripta Peculiar.webp" },
+  "bl-f.png": { hero: "assets/web/img/BCA/bl-f.webp", hex: "assets/web/img/BCA/bf.webp", crest: "assets/web/img/BCA/s-blindado.webp", color: "#243f9f", glow: "rgba(36,63,159,.68)", arena: "assets/web/img/BCA/campaña/fondos/Cripta Peculiar.webp" }
 };
 
 const initializeBca = () => {

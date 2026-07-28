@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const coreLogoUrl = item.dataset.coreLogo;
       if (coreLogo && coreLogoUrl) {
         coreLogo.src = coreLogoUrl;
-        core.style.setProperty('--core-image', `url("${coreLogoUrl}")`);
+        core.style.setProperty('--core-image', `url("../${coreLogoUrl}")`);
         const label = item.querySelector('.radial-label');
         coreLogo.alt = label ? label.textContent : '';
         coreLogo.classList.add('is-visible');

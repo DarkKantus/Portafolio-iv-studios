@@ -6,13 +6,13 @@ const panelTitle = document.getElementById('pemPanelTitle');
 const panelText = document.getElementById('pemPanelText');
 const panelVisual = document.getElementById('pemVisual');
 const historyImages = [
-  'assets/img/pem/Historia/asentamiento militar en ruinas.png',
-  'assets/img/pem/Historia/Centro hidroponico en ruinas.jpeg',
-  'assets/img/pem/Historia/centro hidropónico local.png',
-  'assets/img/pem/Historia/fábrica infectada.png',
-  'assets/img/pem/Historia/Extractor de Marcurenio.png',
-  'assets/img/pem/Historia/Plataforma de despege.png',
-  'assets/img/pem/Historia/ultimo bastión de la humanidad.png'
+  'assets/web/img/pem/Historia/asentamiento militar en ruinas.webp',
+  'assets/web/img/pem/Historia/Centro hidroponico en ruinas.webp',
+  'assets/web/img/pem/Historia/centro hidropónico local.webp',
+  'assets/web/img/pem/Historia/fábrica infectada.webp',
+  'assets/web/img/pem/Historia/Extractor de Marcurenio.webp',
+  'assets/web/img/pem/Historia/Plataforma de despege.webp',
+  'assets/web/img/pem/Historia/ultimo bastión de la humanidad.webp'
 ];
 let sliderInterval = null;
 let sliderPaused = false;

@@ -8,8 +8,8 @@ const projects = {
   am: {
     theme: "am",
     mode: "scene",
-    sceneBackground: "../assets/img/AM/libreta-bg.png",
-    logo: "assets/img/AM/logo.png",
+    sceneBackground: "../assets/web/img/AM/libreta-bg.webp",
+    logo: "assets/web/img/AM/logo.webp",
     logoAlt: "Logo de Archeology Master",
     kicker: "Investigación arqueológica",
     title: "Archeology Master",
@@ -18,7 +18,7 @@ const projects = {
     description: "Una mini landing interna para el proyecto arqueológico: exploración semi-cartoon, restauración de piezas y lectura cualitativa de evidencias. La fantasía central es convertir objetos encontrados en conocimiento defendible.",
     slides: [
       {
-        src: "assets/img/AM/Mapa1a.png",
+        src: "assets/web/img/AM/Mapa1a.webp",
         alt: "Mapa de investigación arqueológica",
         title: "Historia",
         lightbox: true,
@@ -26,17 +26,17 @@ const projects = {
         text: "Nos ubicamos en las ficticias tierras de Puchunhuelún, una tierra cuya memoria ancestral nunca quedó guardada en la historia. Nosotros, como arqueólogos, debemos devolverle el pasado a estas tierras y, de paso, descubrir una historia llena de politiqueo, traiciones y hallazgos que nos harán replantear cómo entendemos la historia."
       },
       {
-        src: "assets/img/AM/urna-1.png",
+        src: "assets/web/img/AM/urna-1.webp",
         alt: "Urna arqueológica",
         title: "Artefactos",
         text: "Un solo objeto puede esconder lecturas distintas si lo giramos: marcas, desgaste y pequeños detalles cambian según la vista. Cada artefacto nos revela su propia verdad, y nosotros, como investigadores, debemos descubrirla.",
         views: [
-          { src: "assets/img/AM/urna-1.png", alt: "Urna arqueológica vista frontal" },
-          { src: "assets/img/AM/urna-2.png", alt: "Urna arqueológica vista posterior" }
+          { src: "assets/web/img/AM/urna-1.webp", alt: "Urna arqueológica vista frontal" },
+          { src: "assets/web/img/AM/urna-2.webp", alt: "Urna arqueológica vista posterior" }
         ]
       },
       {
-        src: "assets/img/AM/mesa-limpieza.png",
+        src: "assets/web/img/AM/mesa-limpieza.webp",
         alt: "Mesa de limpieza",
         title: "Mesa de restauración",
         text: "Tanto huesos como artefactos deben pasar por nuestra hábil mano, por nuestros ojos expertos y por nuestra habilidad histórica. La limpieza de estos objetos olvidados es vital para una mejor comprensión.",
@@ -57,7 +57,7 @@ const projects = {
               name: "Artefacto",
               id: "101",
               score: 7,
-              image: "assets/img/AM/urna-1.png",
+              image: "assets/web/img/AM/urna-1.webp",
               fields: [
                 ["Objeto", "Urna"],
                 ["Referencia a", "Cultura A"],
@@ -72,7 +72,7 @@ const projects = {
               name: "Hueso",
               id: "113",
               score: 4,
-              image: "assets/img/AM/calaca.png",
+              image: "assets/web/img/AM/calaca.webp",
               fields: [
                 ["Objeto", "Cráneo"],
                 ["Referencia a", "Especie animal"],
@@ -84,14 +84,14 @@ const projects = {
         }
       },
       {
-        src: "assets/img/AM/gameplay1.png",
+        src: "assets/web/img/AM/gameplay1.webp",
         alt: "Captura de pantalla de Archeology Master",
         title: "Capturas del proyecto",
         text: "Vistas tempranas del prototipo: escenas, interfaz y pruebas visuales que todavía están en desarrollo.",
         views: [
-          { src: "assets/img/AM/gameplay1.png", alt: "Captura de gameplay 1" },
-          { src: "assets/img/AM/gameplay2.png", alt: "Captura de gameplay 2" },
-          { src: "assets/img/AM/gameplay3.png", alt: "Captura de gameplay 3" }
+          { src: "assets/web/img/AM/gameplay1.webp", alt: "Captura de gameplay 1" },
+          { src: "assets/web/img/AM/gameplay2.webp", alt: "Captura de gameplay 2" },
+          { src: "assets/web/img/AM/gameplay3.webp", alt: "Captura de gameplay 3" }
         ],
         lightbox: true,
         caption: "Versiones tempranas en RPG Maker para prototipo",
@@ -117,7 +117,7 @@ const projects = {
     description: "Prototipo de supervivencia doméstica y paranoia informativa: administrar recursos, escuchar señales contradictorias y decidir a quién creer cuando el mundo se acaba por versiones distintas.",
     slides: [
       {
-        src: "assets/img/30DF/salon.png",
+        src: "assets/web/img/30DF/salon.webp",
         alt: "Salón del refugio",
         title: "Refugio",
         text: "La casa todavía está en pie, pero cada día pesa más. El salón concentra las señales del exterior: televisión, radio, visitas y rumores que nunca dicen exactamente lo mismo.",
@@ -130,7 +130,7 @@ const projects = {
         ]
       },
       {
-        src: "assets/img/30DF/cocina.png",
+        src: "assets/web/img/30DF/cocina.webp",
         alt: "Cocina y provisiones",
         title: "Recursos",
         text: "La cocina convierte el apocalipsis en inventario: agua, comida, medicina y energía. Sobrevivir no siempre significa ganar; a veces solo significa llegar al día siguiente.",
@@ -155,7 +155,7 @@ const projects = {
         ]
       },
       {
-        src: "assets/img/30DF/ventana.png",
+        src: "assets/web/img/30DF/ventana.webp",
         alt: "Ventana del refugio",
         title: "Visitantes",
         text: "No todos los que llegan son enemigos, pero todos traen hambre, miedo o una versión distinta del fin. Dejar entrar a alguien puede salvar una vida o destruir el refugio desde dentro.",
@@ -167,15 +167,15 @@ const projects = {
         ]
       },
       {
-        src: "assets/img/30DF/3gameplay1.png",
+        src: "assets/web/img/30DF/3gameplay1.webp",
         alt: "Captura del prototipo 30DF",
         title: "Capturas del prototipo",
         text: "Una base jugable temprana: pantallas, pruebas de habitación y sistemas iniciales. El proyecto sigue verde, pero la fantasía central ya está definida.",
         signal: "Prototipo WIP: refugio, eventos y navegación doméstica en construcción.",
         stats: ["Sistema base", "Eventos WIP", "Arte temporal", "Narrativa en diseño"],
         views: [
-          { src: "assets/img/30DF/3gameplay1.png", alt: "Captura 1 del prototipo 30DF" },
-          { src: "assets/img/30DF/3gameplay2.png", alt: "Captura 2 del prototipo 30DF" },
+          { src: "assets/web/img/30DF/3gameplay1.webp", alt: "Captura 1 del prototipo 30DF" },
+          { src: "assets/web/img/30DF/3gameplay2.webp", alt: "Captura 2 del prototipo 30DF" },
           { src: "assets/img/30DF/mesa-main.png", alt: "Mesa principal del prototipo" }
         ]
       }

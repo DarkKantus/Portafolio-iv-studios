@@ -74,7 +74,7 @@ body {
   z-index: -3;
   background:
     linear-gradient(90deg, rgba(5,18,20,.90), rgba(55,34,17,.42), rgba(5,18,20,.86)),
-    url("../assets/img/AM/menu-bg.png") center / cover no-repeat;
+    url("../assets/web/img/AM/menu-bg.webp") center / cover no-repeat;
   transform: scale(1.04);
   transition: background 420ms ease, filter 420ms ease, opacity 420ms ease;
 }
@@ -299,7 +299,7 @@ body {
 body.theme-am .games-bg {
   background:
     linear-gradient(90deg, rgba(8,22,24,.86), rgba(66,41,18,.36), rgba(8,22,24,.82)),
-    url("../assets/img/AM/menu-bg.png") center / cover no-repeat;
+    url("../assets/web/img/AM/menu-bg.webp") center / cover no-repeat;
 }
 body.theme-am .games-stage::before {
   background:
@@ -310,7 +310,7 @@ body.theme-am .games-stage::before {
 body.theme-df30 .games-bg {
   background:
     linear-gradient(90deg, rgba(3,9,12,.92), rgba(62,28,23,.54), rgba(3,9,12,.90)),
-    url("../assets/img/30DF/salon.png") center / cover no-repeat;
+    url("../assets/web/img/30DF/salon.webp") center / cover no-repeat;
   filter: saturate(.78) contrast(1.08) brightness(.72);
 }
 body.theme-df30 .games-stage::before {
@@ -2308,7 +2308,7 @@ body.theme-df30 .project-media {
 }
 .df30-room__bg {
   z-index: -3;
-  background: url("../assets/img/30DF/salon.png") center / cover no-repeat;
+  background: url("../assets/web/img/30DF/salon.webp") center / cover no-repeat;
   filter: saturate(.82) contrast(1.06) brightness(.78);
   transform: scale(1.01);
 }
@@ -3844,10 +3844,10 @@ body.theme-hub .project-card::after {
   transition: background 920ms ease;
 }
 body.theme-hub .project-card[data-project="am"]::before {
-  background-image: url("../assets/img/AM/fondo-web.png");
+  background-image: url("../assets/web/img/AM/fondo-web.webp");
 }
 body.theme-hub .project-card[data-project="df30"]::before {
-  background-image: url("../assets/img/30DF/fondo-web.png");
+  background-image: url("../assets/web/img/30DF/fondo-web.webp");
   filter: saturate(.72) contrast(1.12) brightness(.60);
 }
 body.theme-hub .project-card[data-project="am"]::after {

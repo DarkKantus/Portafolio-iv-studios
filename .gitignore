@@ -13,3 +13,7 @@ backups/
 
 # Runtime/log outputs
 *.log
+
+# Local Python verification caches
+__pycache__/
+*.py[cod]

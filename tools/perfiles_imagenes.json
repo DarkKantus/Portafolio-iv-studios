@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "calidad_rgb": 82,
+  "calidad_alfa": 86,
+  "lado_mayor_predeterminado": 1600,
+  "reglas": [
+    {"prefijo": "assets/img/Fondos/", "lado_mayor": 1920},
+    {"prefijo": "assets/img/Arte y diseño/", "lado_mayor": 2048},
+    {"prefijo": "assets/img/Laboratorio/", "lado_mayor": 2048},
+    {"prefijo": "assets/img/pem/", "lado_mayor": 1920},
+    {"prefijo": "assets/img/30DF/", "lado_mayor": 1920},
+    {"prefijo": "assets/img/AM/", "lado_mayor": 1920},
+    {"prefijo": "assets/img/BCA/", "lado_mayor": 1600},
+    {"prefijo": "assets/img/Core/", "lado_mayor": 1024}
+  ],
+  "excluir": ["assets/img/AM/cursor-"]
+}
