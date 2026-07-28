@@ -12,6 +12,10 @@ class ReferenciasCssTests(unittest.TestCase):
         esperado = '.replace(/\\.webp$/, ".png")'
         self.assertIn(esperado, contenido)
 
+    def test_bca_versiona_el_script_corregido_para_evitar_cache_vieja(self):
+        contenido = (Path(__file__).resolve().parents[1] / "bca.html").read_text(encoding="utf-8")
+        self.assertIn('src="js/bca.js?v=restore-champions"', contenido)
+
 
 if __name__ == "__main__":
     unittest.main()
