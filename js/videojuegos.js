@@ -699,6 +699,18 @@ function renderSlide(project, index) {
   });
 }
 
+function requestGamesLandscape() {
+  if (!window.matchMedia("(max-width: 760px)").matches) return;
+  const orientation = window.screen?.orientation;
+  if (typeof orientation?.lock !== "function") return;
+  orientation.lock("landscape").catch(() => {});
+}
+
+function releaseGamesLandscape() {
+  if (!window.matchMedia("(max-width: 760px)").matches) return;
+  window.screen?.orientation?.unlock?.();
+}
+
 function renderProject(key) {
   const project = projects[key] || projects.hub;
   stopAllAudio();
@@ -709,6 +721,8 @@ function renderProject(key) {
   stage.classList.add("is-switching");
 
   body.className = `theme-${project.theme}`;
+  if (key === "hub") releaseGamesLandscape();
+  else requestGamesLandscape();
   fields.kicker.textContent = project.kicker;
   fields.title.textContent = project.title;
   fields.lead.textContent = project.lead;

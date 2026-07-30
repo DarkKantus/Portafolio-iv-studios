@@ -144,6 +144,22 @@ const initializeBca = () => {
   closeChampion?.addEventListener("click", closeChampionModal);
   closeImage?.addEventListener("click", closeImageModal);
   championModal?.addEventListener("click", (event) => { if (event.target === championModal) closeChampionModal(); });
+
+  let swipeStart = null;
+  championModal?.addEventListener("pointerdown", (event) => {
+    if (!window.matchMedia("(max-width: 760px)").matches || !championModal.classList.contains("active")) return;
+    swipeStart = { x: event.clientX, y: event.clientY, pointerId: event.pointerId };
+  });
+  championModal?.addEventListener("pointerup", (event) => {
+    if (!swipeStart || swipeStart.pointerId !== event.pointerId) return;
+    const deltaX = event.clientX - swipeStart.x;
+    const deltaY = event.clientY - swipeStart.y;
+    swipeStart = null;
+    if (Math.abs(deltaX) < 48 || Math.abs(deltaX) <= Math.abs(deltaY) * 1.35) return;
+    openChampion(activeIndex + (deltaX < 0 ? 1 : -1));
+  });
+  championModal?.addEventListener("pointercancel", () => { swipeStart = null; });
+
   imageModal?.addEventListener("click", (event) => { if (event.target === imageModal) closeImageModal(); });
   reviewCards.forEach((card) => card.addEventListener("click", () => openImageModal(card)));
   document.addEventListener("keydown", (event) => {

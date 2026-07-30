@@ -1,0 +1,912 @@
+/* Portafolio Kael v1.2 — adaptación de maquetación para pantallas táctiles.
+   No modifica contenido, recursos ni contratos de interacción. */
+
+@media (max-width: 760px) {
+  html,
+  body {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: clip;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  img,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+  }
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    touch-action: manipulation;
+  }
+
+  .site-footer {
+    padding-inline: .7rem;
+    letter-spacing: .055em;
+  }
+
+  /* Páginas que comparten la estructura one-shot. */
+  .oneshot-shell {
+    width: 100%;
+    height: auto;
+    min-height: 100dvh;
+    padding: 16px;
+    overflow: visible;
+  }
+
+  .oneshot-topbar,
+  .art-page .oneshot-topbar,
+  .lab-page .oneshot-topbar {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .oneshot-hero,
+  .art-page .oneshot-hero,
+  .lab-page .oneshot-hero {
+    justify-self: start;
+    text-align: left;
+  }
+
+  .oneshot-lead,
+  .lab-page .oneshot-lead {
+    margin-left: 0;
+  }
+
+  .oneshot-tabs,
+  .art-page .oneshot-tabs,
+  .lab-page .lab-tabs {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    padding: 2px 1px 8px;
+    scrollbar-width: thin;
+  }
+
+  .oneshot-tab {
+    flex: 0 0 auto;
+    min-height: 42px;
+  }
+
+  .art-panel {
+    height: auto;
+    min-height: 0;
+    padding: 16px;
+  }
+
+  .art-gallery-wrap {
+    min-height: 0;
+    margin-inline: 0;
+  }
+
+  .art-gallery {
+    min-height: 54vh;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .art-gallery__nav--prev { left: 6px; right: auto; }
+  .art-gallery__nav--next { right: 6px; left: auto; }
+
+  .art-lightbox,
+  .lab-lightbox {
+    padding: 16px;
+  }
+
+  .art-lightbox__nav {
+    width: 42px;
+    height: 58px;
+    font-size: 2.4rem;
+  }
+
+  .art-lightbox__nav--prev { left: 10px; }
+  .art-lightbox__nav--next { right: 10px; }
+  .art-lightbox__close,
+  .lab-lightbox__close { top: 10px; right: 10px; }
+
+  /* Laboratorio: sus selectores de escritorio son más específicos. */
+  .lab-page .oneshot-shell {
+    padding: 16px;
+    grid-template-rows: auto auto;
+    gap: 18px;
+  }
+
+  .lab-page .lab-stage {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .lab-page .lab-stage::before {
+    display: none;
+  }
+
+  .lab-page .lab-tabs {
+    height: auto;
+    justify-content: flex-start;
+  }
+
+  .lab-page .oneshot-tab {
+    width: auto;
+    min-width: max-content;
+    transform: none;
+  }
+
+  .lab-page .lab-panel {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 20px;
+  }
+
+  .lab-page .lab-copy {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .lab-page .lab-visual {
+    min-height: 230px;
+  }
+
+  /* Multimedia: dos paneles apilados y reproductor sin compresión. */
+  .multimedia-page,
+  .multimedia-shell {
+    overflow: visible;
+  }
+
+  .multimedia-stage {
+    grid-template-columns: 1fr;
+  }
+
+  .media-panel--video {
+    min-height: 0;
+  }
+
+  .now-playing--native {
+    grid-template-columns: 1fr;
+    grid-template-areas: "meta" "player";
+    gap: 13px;
+  }
+
+  /* PeM: una sola columna, sin paneles limitados a la altura del escritorio. */
+  .pem-command {
+    padding: 8px;
+  }
+
+  .pem-command__shell {
+    min-height: 0;
+    gap: 10px;
+  }
+
+  .pem-command__sidebar {
+    padding: 22px 18px;
+    gap: 18px;
+  }
+
+  .pem-command__main {
+    padding: 16px 12px;
+  }
+
+  #mars-globe {
+    width: 170px;
+    height: 170px;
+  }
+
+  .pem-topbar {
+    padding: 0 0 10px;
+  }
+
+  .pem-topbar__actions {
+    right: 0;
+  }
+
+  .pem-topbar__button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .pem-display {
+    min-height: 0;
+    max-height: none;
+    padding: 10px;
+  }
+
+  .pem-display__visual {
+    min-height: 240px;
+  }
+
+  .pem-display__content {
+    min-height: 0;
+    padding: 20px 16px;
+    overflow: visible;
+  }
+
+  .pem-display__text {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .pem-command__main.is-planet-open .pem-planet-module,
+  .pem-command__main.is-planet-open.has-planet-selection .pem-planet-module {
+    height: auto;
+    max-height: none;
+    grid-template-columns: 1fr;
+    padding: 14px;
+  }
+
+  #mars-globe-large {
+    width: min(70vw, 250px);
+    height: min(70vw, 250px);
+    min-width: 0;
+    min-height: 0;
+  }
+
+  .pem-planet-brief {
+    min-height: 260px;
+    padding: 20px;
+    border-top: 1px solid rgba(140,236,255,.28);
+    border-left: 0;
+  }
+
+  /* BattleChamp Arena. */
+  body:has(.bca-hero),
+  body:has(.bca-hero) *,
+  body:has(.bca-hero) *::before,
+  body:has(.bca-hero) *::after {
+    box-sizing: border-box;
+  }
+
+  .portal-return {
+    top: clamp(.75rem, 3vw, 1.2rem);
+    right: clamp(.75rem, 4vw, 1.1rem);
+    left: auto;
+    padding: .5525rem .85rem;
+    font-size: .612rem;
+  }
+
+  .portal-return span {
+    font-size: .98rem;
+  }
+
+  .bca-hero {
+    min-height: 100dvh;
+    padding: 80px 14px 28px;
+  }
+
+  .hero-box {
+    width: min(100%, 550px);
+    padding: 30px 20px;
+  }
+
+  .bca-review,
+  .bca-select {
+    padding-inline: 14px;
+  }
+
+  .review-card {
+    width: min(100%, 360px);
+  }
+
+  /* BCA — roster móvil: una fila por clase, masculino a la izquierda y femenino a la derecha. */
+  .hex-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 12px;
+    width: min(100%, 310px);
+    margin-inline: auto;
+  }
+
+  .hex-row {
+    display: contents;
+  }
+
+  .hex-row:nth-child(2) {
+    margin-top: 0;
+    transform: none;
+  }
+
+  .hex-item {
+    width: 100%;
+    max-width: 142px;
+    justify-self: center;
+  }
+
+  .hex-row:first-child .hex-item:nth-child(1) { grid-area: 1 / 1; }
+  .hex-row:nth-child(2) .hex-item:nth-child(1) { grid-area: 1 / 2; }
+  .hex-row:first-child .hex-item:nth-child(2) { grid-area: 2 / 1; }
+  .hex-row:nth-child(2) .hex-item:nth-child(2) { grid-area: 2 / 2; }
+  .hex-row:first-child .hex-item:nth-child(3) { grid-area: 3 / 1; }
+  .hex-row:nth-child(2) .hex-item:nth-child(3) { grid-area: 3 / 2; }
+  .hex-row:nth-child(2) .hex-item:nth-child(4) { grid-area: 4 / 1; }
+  .hex-row:first-child .hex-item:nth-child(4) { grid-area: 4 / 2; }
+  .hex-row:nth-child(2) .hex-item:nth-child(5) { grid-area: 5 / 1; }
+  .hex-row:first-child .hex-item:nth-child(5) { grid-area: 5 / 2; }
+  .hex-row:nth-child(2) .hex-item:nth-child(6) { grid-area: 6 / 1; }
+  .hex-row:first-child .hex-item:nth-child(6) { grid-area: 6 / 2; }
+
+  /* El HTML histórico deja campaña y footer dentro del grid: en móvil recuperan filas completas. */
+  .hex-grid > .bca-campaign-teaser {
+    grid-column: 1 / -1;
+    grid-row: 7;
+    width: 100%;
+  }
+
+  .hex-grid > .site-footer {
+    grid-column: 1 / -1;
+    grid-row: 8;
+    width: 100%;
+  }
+
+  /* BCA — ficha móvil: jerarquía continua, banderas decorativas fuera del título. */
+  .modal-overlay:not(.img-modal) {
+    display: none;
+    align-items: flex-start;
+    overflow-y: auto;
+    padding: 56px 10px 18px;
+  }
+
+  .modal-overlay:not(.img-modal).active {
+    display: flex;
+  }
+
+  .card-container {
+    width: min(calc(100vw - 20px), 360px);
+    height: auto;
+    max-height: none;
+    min-height: 0;
+    padding: 16px 14px 22px;
+    touch-action: pan-y;
+  }
+
+  .close-modal {
+    top: 18px;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.6rem;
+  }
+
+  .flag-emblem {
+    top: 10px;
+    width: 48px;
+  }
+
+  .flag-emblem.left { left: 10px; }
+  .flag-emblem.right { right: 10px; }
+
+  .card-header {
+    min-height: 86px;
+    margin: 0 0 10px;
+    padding: 44px 52px 0;
+  }
+
+  .card-header h2,
+  .card-header h2#card-name {
+    padding: 0;
+    font-size: clamp(1.35rem, 7vw, 1.8rem);
+    letter-spacing: .08em;
+    line-height: 1.05;
+  }
+
+  .card-header p {
+    margin-top: 4px;
+    font-size: .78rem;
+    line-height: 1.3;
+  }
+
+  .card-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 18px;
+  }
+
+  .col-left,
+  .col-center,
+  .col-right {
+    width: 100%;
+    padding: 0;
+  }
+
+  .col-left { order: 1; gap: 0; }
+  .col-center { order: 2; min-height: 250px; }
+  .col-right { order: 3; gap: 22px; padding-top: 4px; }
+
+  .col-left h3,
+  .weapons-box h3,
+  .armor-box h3,
+  .skills-box h3 {
+    margin-bottom: .55rem;
+    font-size: .96rem;
+  }
+
+  .col-left p,
+  .mini-text,
+  .skill-list li {
+    font-size: .84rem;
+    line-height: 1.5;
+  }
+
+  .col-center img {
+    max-width: 100%;
+    max-height: 310px;
+    transform: none;
+  }
+
+  .skill-list {
+    gap: .8rem;
+  }
+
+  .bca-campaign-teaser {
+    padding: 28px 14px 0;
+  }
+
+  .campaign-teaser__frame {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    min-height: 0;
+  }
+
+  .campaign-teaser__frame::before {
+    background:
+      linear-gradient(90deg, rgba(3, 6, 4, .34) 0%, rgba(3, 6, 4, .12) 22%, transparent 50%, rgba(3, 6, 4, .12) 78%, rgba(3, 6, 4, .34) 100%),
+      linear-gradient(180deg, rgba(0, 0, 0, .12), transparent 26%, rgba(0, 0, 0, .16));
+  }
+
+  .campaign-teaser__copy,
+  .campaign-teaser__scenes {
+    width: 100%;
+  }
+
+  .campaign-teaser__copy {
+    padding: 30px 24px;
+  }
+
+  .campaign-teaser__scenes {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .campaign-teaser__scenes img {
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .bca-campaign-teaser + .site-footer {
+    margin-top: 0;
+  }
+
+  /* Arte / Diseño: la nota deja de cubrir el dossier en pantallas estrechas. */
+  .am-dossier-card__note {
+    position: static;
+    width: min(100%, 270px);
+    margin: 0 auto 18px;
+  }
+
+  .am-workbench__frame {
+    min-height: 300px;
+  }
+
+  /* Videojuegos: los one-shot de escritorio pasan a lectura vertical real. */
+  html:has(.games-shell),
+  body:has(.games-shell) {
+    height: auto;
+    min-height: 100dvh;
+    overflow-y: auto;
+  }
+
+  .games-shell {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 100dvh;
+    padding: 0;
+  }
+
+  .games-stage {
+    width: 100%;
+    height: auto;
+    min-height: 100dvh;
+    padding: 72px 16px 22px;
+    border: 0;
+    border-radius: 0;
+    overflow: visible;
+    grid-template-rows: auto auto auto;
+  }
+
+  .games-stage::after {
+    inset: 10px;
+  }
+
+  .games-header {
+    width: 100%;
+    padding: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .project-logo-box {
+    justify-self: start;
+    width: min(180px, 55vw);
+  }
+
+  .games-content,
+  .project-view,
+  .project-dossier {
+    overflow: visible;
+  }
+
+  .project-view {
+    grid-template-columns: 1fr;
+  }
+
+  .project-media {
+    min-height: 280px;
+  }
+
+  .project-slider {
+    min-height: 300px;
+  }
+
+  .project-slider figcaption {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    padding: 9px 10px;
+  }
+
+  .project-picker {
+    width: 100%;
+  }
+
+  .project-card {
+    min-height: 180px;
+  }
+
+  .am-book {
+    height: auto;
+    min-height: 600px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    padding: 32px 26px;
+    background-size: cover;
+  }
+
+  .am-book__page--left,
+  .am-book__page--right {
+    padding: 10px;
+  }
+
+  .am-book__artifact {
+    height: 260px;
+  }
+
+  /* 30DF conserva su escena de escritorio: lienzo completo, sin conversión a columna. */
+  body.theme-df30,
+  body.theme-am {
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  body.theme-df30 .games-shell,
+  body.theme-am .games-shell {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    width: 100vw;
+    height: 100dvh;
+    min-height: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  body.theme-df30 .games-stage,
+  body.theme-df30 .games-content,
+  body.theme-df30 .project-view,
+  body.theme-df30 .project-media,
+  body.theme-df30 .df30-room,
+  body.theme-am .games-stage,
+  body.theme-am .games-content,
+  body.theme-am .project-view,
+  body.theme-am .project-media {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  body.theme-df30 .games-stage,
+  body.theme-am .games-stage {
+    display: grid;
+    grid-template-rows: 1fr;
+  }
+
+  /* Selector interno: muestra sólo el proyecto alternativo, dentro del lienzo horizontal. */
+  body.theme-df30 .project-picker,
+  body.theme-am .project-picker {
+    position: fixed;
+    left: 50%;
+    bottom: 8px;
+    z-index: 60;
+    display: flex;
+    width: auto !important;
+    max-width: calc(100vw - 24px);
+    gap: 0;
+    transform: translateX(-50%);
+  }
+
+  body.theme-df30 .project-card,
+  body.theme-am .project-card {
+    display: block;
+    width: auto !important;
+    min-height: 0;
+    padding: 4px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  body.theme-df30 .project-card[data-project="df30"],
+  body.theme-am .project-card[data-project="am"] {
+    display: none;
+  }
+
+  body.theme-df30 .project-card strong,
+  body.theme-am .project-card strong {
+    font-size: clamp(.55rem, 1.8vw, .68rem);
+    letter-spacing: .04em;
+  }
+
+  body.theme-df30 .project-card em,
+  body.theme-am .project-card em {
+    display: none;
+  }
+
+  body.theme-df30 .df30-room__hotspot--tv {
+    left: 84% !important;
+    width: 20% !important;
+  }
+
+  body.theme-df30 .df30-room__hotspot span {
+    padding: 3px 5px !important;
+    font-size: .56rem !important;
+    letter-spacing: .055em !important;
+  }
+
+  body.theme-df30 > .site-footer,
+  body.theme-am > .site-footer {
+    display: none;
+  }
+}
+
+/* Pasada transversal: lectura táctil y aprovechamiento de altura en horizontal.
+   Excluye BCA y las escenas de Videojuegos, que mantienen sus contratos propios. */
+@media (max-width: 760px) {
+  .oneshot-shell,
+  .multimedia-shell,
+  .pem-command,
+  .am-hero,
+  .am-section,
+  .am-workbench {
+    padding-inline: max(12px, env(safe-area-inset-left));
+  }
+
+  .oneshot-tabs,
+  .lab-page .lab-tabs {
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    scrollbar-color: rgba(110, 92, 58, .55) transparent;
+  }
+
+  .oneshot-tab,
+  .lab-page .oneshot-tab {
+    scroll-snap-align: start;
+  }
+
+  .art-gallery img,
+  .lab-page .lab-visual img,
+  .multimedia-page video,
+  .pem-display__visual canvas {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 760px) and (orientation: landscape) {
+  .oneshot-shell {
+    padding-block: 10px;
+  }
+
+  .oneshot-topbar,
+  .art-page .oneshot-topbar,
+  .lab-page .oneshot-topbar {
+    gap: 10px;
+  }
+
+  .art-panel,
+  .lab-page .lab-panel {
+    padding: 14px;
+  }
+
+  .art-gallery {
+    min-height: 42dvh;
+  }
+
+  .lab-page .lab-visual {
+    min-height: 190px;
+  }
+
+  .multimedia-page .media-panel {
+    padding: 14px;
+  }
+
+  .multimedia-page .media-panel--video {
+    min-height: 360px;
+  }
+
+  .pem-display__visual {
+    min-height: 200px;
+  }
+
+  .am-hero {
+    min-height: 0;
+    padding-top: 58px;
+    padding-bottom: 30px;
+  }
+
+  .am-logo {
+    max-height: 46dvh;
+    object-fit: contain;
+  }
+
+  /* Portal principal: la navegación de regreso puede cargar ya en horizontal.
+     dvw/dvh fuerza a recalcular el lienzo tras el cambio de orientación en Opera. */
+  html:has(#app),
+  body:has(#app) {
+    width: 100dvw;
+    height: 100dvh;
+    min-height: 100dvh;
+    overflow: hidden;
+  }
+
+  #app {
+    width: 100dvw;
+    height: 100dvh;
+    min-height: 100dvh;
+    max-width: none;
+    min-width: 0;
+    padding: .35rem .75rem;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+  }
+
+  .site-header {
+    width: min(100%, 32rem);
+    max-width: none;
+    padding: .2rem .75rem;
+  }
+
+  .site-header h1 {
+    font-size: clamp(1.05rem, 3.1vw, 1.35rem);
+  }
+
+  .site-subtitle {
+    font-size: clamp(.62rem, 1.7vw, .75rem);
+  }
+
+  .site-main {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .radial-menu {
+    --portal-size: min(18.5rem, calc(100dvh - 5.5rem), calc(100dvw - 2rem));
+    width: var(--portal-size);
+    height: var(--portal-size);
+    flex: 0 0 var(--portal-size);
+  }
+
+  .radial-core {
+    width: clamp(4.8rem, 18dvh, 6rem);
+    height: clamp(4.8rem, 18dvh, 6rem);
+  }
+
+  .radial-item {
+    width: clamp(4.25rem, 15dvh, 5.25rem);
+    min-height: clamp(2.7rem, 10dvh, 3.4rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .oneshot-shell {
+    padding: 12px;
+  }
+
+  .oneshot-panel {
+    border-radius: 20px;
+  }
+
+  .art-gallery {
+    min-height: 48vh;
+    gap: 8px;
+  }
+
+  .art-preview__caption {
+    padding: 7px;
+    font-size: .68rem;
+  }
+
+  .pem-command {
+    padding: 5px;
+  }
+
+  .pem-command__sidebar,
+  .pem-command__main {
+    border-radius: 10px;
+  }
+
+  .pem-display__title {
+    font-size: clamp(1.7rem, 9vw, 2.25rem);
+  }
+
+  .games-back {
+    top: 12px;
+    left: 12px;
+    padding: 8px 11px;
+    font-size: .78rem;
+  }
+
+  .games-header h1 {
+    font-size: clamp(2rem, 11vw, 3rem);
+  }
+
+  .project-card {
+    min-height: 160px;
+    padding: 22px 18px;
+  }
+
+  .am-book__page li {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+}
+
+/* La rotación automática depende del navegador; este fallback evita deformar 30DF en retrato. */
+@media (max-width: 760px) and (orientation: portrait) {
+  body.theme-df30 .games-stage,
+  body.theme-am .games-stage {
+    visibility: hidden;
+  }
+
+  body.theme-df30 .games-shell::after,
+  body.theme-am .games-shell::after {
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+    color: #fff0e8;
+    background:
+      radial-gradient(circle at 50% 45%, rgba(182, 75, 60, .18), transparent 38%),
+      #090706;
+    font: 700 clamp(.9rem, 4vw, 1.1rem)/1.5 "Share Tech Mono", monospace;
+    letter-spacing: .14em;
+    text-align: center;
+  }
+
+  body.theme-df30 .games-shell::after {
+    content: "30 DÍAS PARA EL FIN · GIRA TU DISPOSITIVO";
+  }
+
+  body.theme-am .games-shell::after {
+    content: "ARCHEOLOGY MASTER · GIRA TU DISPOSITIVO";
+  }
+}
