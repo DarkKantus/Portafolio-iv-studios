@@ -11,6 +11,14 @@
     -webkit-text-size-adjust: 100%;
   }
 
+  html:has(.oneshot-shell),
+  body:has(.oneshot-shell) {
+    height: auto;
+    min-height: 100dvh;
+    overflow-x: clip;
+    overflow-y: auto;
+  }
+
   img,
   video,
   canvas,
@@ -688,7 +696,15 @@
 
 /* Pasada transversal: lectura táctil y aprovechamiento de altura en horizontal.
    Excluye BCA y las escenas de Videojuegos, que mantienen sus contratos propios. */
-@media (max-width: 760px) {
+@media (max-width: 760px), (max-height: 500px) and (orientation: landscape) {
+  html:has(.oneshot-shell),
+  body:has(.oneshot-shell) {
+    height: auto;
+    min-height: 100dvh;
+    overflow-x: clip;
+    overflow-y: auto;
+  }
+
   .oneshot-shell,
   .multimedia-shell,
   .pem-command,
@@ -696,6 +712,21 @@
   .am-section,
   .am-workbench {
     padding-inline: max(12px, env(safe-area-inset-left));
+  }
+
+  #mars-globe-large {
+    width: min(100%, 250px);
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .pem-planet-brief {
+    min-height: clamp(200px, 42dvh, 260px);
+  }
+
+  .am-section,
+  .am-workbench {
+    width: min(1180px, calc(100dvw - max(20px, calc(env(safe-area-inset-left) + env(safe-area-inset-right)))));
   }
 
   .oneshot-tabs,
@@ -719,7 +750,62 @@
   }
 }
 
-@media (max-width: 760px) and (orientation: landscape) {
+/* Portal radial: mismo contrato dinámico en todos los móviles verticales. */
+@media (max-width: 760px) {
+  html:has(.radial-menu),
+  body:has(.radial-menu) {
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+    overflow: hidden;
+  }
+
+  body:has(.radial-menu) #app {
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+    max-width: none;
+    min-width: 0;
+    padding:
+      max(.45rem, env(safe-area-inset-top))
+      max(.55rem, env(safe-area-inset-right))
+      max(.35rem, env(safe-area-inset-bottom))
+      max(.55rem, env(safe-area-inset-left));
+    grid-template-rows: auto minmax(0, 1fr) auto;
+  }
+
+  body:has(.radial-menu) .site-main {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  body:has(.radial-menu) .radial-menu {
+    --radial-node-w: clamp(3.35rem, 17vw, 5.5rem);
+    --radial-node-h: clamp(2.55rem, 10vw, 3.5rem);
+    width: min(
+      22rem,
+      calc(100dvw - var(--radial-node-w) - 1rem),
+      calc(100dvh - 8rem - var(--radial-node-h))
+    );
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  body:has(.radial-menu) .radial-core {
+    width: clamp(4.75rem, 25vw, 6.5rem);
+    height: clamp(4.75rem, 25vw, 6.5rem);
+  }
+
+  body:has(.radial-menu) .radial-item {
+    width: var(--radial-node-w);
+    min-height: var(--radial-node-h);
+  }
+}
+
+@media (max-width: 760px) and (orientation: landscape),
+  (max-height: 500px) and (orientation: landscape) {
   .oneshot-shell {
     padding-block: 10px;
   }
@@ -747,8 +833,17 @@
     padding: 14px;
   }
 
+  .multimedia-page {
+    overflow-y: auto;
+  }
+
   .multimedia-page .media-panel--video {
-    min-height: 360px;
+    min-height: 0;
+  }
+
+  .multimedia-page .signal-window {
+    min-height: clamp(88px, 28dvh, 120px);
+    margin-block: 10px 8px;
   }
 
   .pem-display__visual {
@@ -766,17 +861,26 @@
     object-fit: contain;
   }
 
+  .am-dossier-card,
+  .am-workbench__frame {
+    min-height: clamp(220px, 62dvh, 300px);
+  }
+
+  .am-artefact-card {
+    min-height: clamp(280px, 78dvh, 390px);
+  }
+
   /* Portal principal: la navegación de regreso puede cargar ya en horizontal.
      dvw/dvh fuerza a recalcular el lienzo tras el cambio de orientación en Opera. */
-  html:has(#app),
-  body:has(#app) {
+  html:has(.radial-menu),
+  body:has(.radial-menu) {
     width: 100dvw;
     height: 100dvh;
     min-height: 100dvh;
     overflow: hidden;
   }
 
-  #app {
+  body:has(.radial-menu) #app {
     width: 100dvw;
     height: 100dvh;
     min-height: 100dvh;
@@ -786,39 +890,46 @@
     grid-template-rows: auto minmax(0, 1fr) auto;
   }
 
-  .site-header {
+  body:has(.radial-menu) .site-header {
     width: min(100%, 32rem);
     max-width: none;
     padding: .2rem .75rem;
   }
 
-  .site-header h1 {
+  body:has(.radial-menu) .site-header h1 {
     font-size: clamp(1.05rem, 3.1vw, 1.35rem);
   }
 
-  .site-subtitle {
+  body:has(.radial-menu) .site-subtitle {
     font-size: clamp(.62rem, 1.7vw, .75rem);
   }
 
-  .site-main {
+  body:has(.radial-menu) .site-main {
     width: 100%;
     min-width: 0;
-    overflow: hidden;
+    min-height: 0;
+    overflow: visible;
   }
 
-  .radial-menu {
-    --portal-size: min(18.5rem, calc(100dvh - 5.5rem), calc(100dvw - 2rem));
+  body:has(.radial-menu) .radial-menu {
+    --radial-node-w: clamp(3.4rem, 12vw, 4.75rem);
+    --radial-node-h: clamp(2.45rem, 8vw, 3.15rem);
+    --portal-size: min(
+      18.5rem,
+      calc(100dvw - var(--radial-node-w) - 1.5rem),
+      calc(100dvh - 5.5rem - var(--radial-node-h))
+    );
     width: var(--portal-size);
     height: var(--portal-size);
     flex: 0 0 var(--portal-size);
   }
 
-  .radial-core {
+  body:has(.radial-menu) .radial-core {
     width: clamp(4.8rem, 18dvh, 6rem);
     height: clamp(4.8rem, 18dvh, 6rem);
   }
 
-  .radial-item {
+  body:has(.radial-menu) .radial-item {
     width: clamp(4.25rem, 15dvh, 5.25rem);
     min-height: clamp(2.7rem, 10dvh, 3.4rem);
   }
